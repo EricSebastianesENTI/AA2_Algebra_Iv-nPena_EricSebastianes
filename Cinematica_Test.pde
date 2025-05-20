@@ -9,8 +9,8 @@ float jumpHeight = 80;
 float currentScale = 1.0;
 PVector facingDirection = new PVector(0, 0, -1);
 PVector upDirection = new PVector(0, -1, 0);
-w
-void setup() {
+
+/*void setup() {
   size(1800, 900, P3D);
   
   // Configuración inicial
@@ -18,7 +18,7 @@ void setup() {
   position = new PVector(width/2, groundLevel - 50, 0);
   
   // Cargar sprite
-  characterSprite = loadImage("character.png");
+  characterSprite = loadImage("RyomaSakamoto.png");
   if (characterSprite == null) {
     characterSprite = createImage(100, 200, ARGB);
     characterSprite.loadPixels();
@@ -33,7 +33,7 @@ void setup() {
   
   // Configuración de cámara
   cameraSetup();
-}
+}*/
 
 void cameraSetup() {
   camera(width/2, height/2 - 150, (height/2) / tan(PI*30.0 / 180.0),
@@ -64,7 +64,7 @@ void applyOrientation() {
   transformMatrix.m22 = -facingDirection.z;
 }
 
-void draw() {
+/*void draw() {
   background(135, 206, 235);
   
   // Iluminación.
@@ -83,7 +83,7 @@ void draw() {
   
   // Dibujar HUD.
   drawHUD();
-}
+}*/
 
 void drawGround() {
   pushMatrix();
@@ -218,7 +218,7 @@ void rotateCharacterY(float angle) {
   
   resetTransform();
 }
-void keyPressed() {
+/*void keyPressed() {
   if (key == 'a' || key == 'A') rotateCharacterY(-rotationSpeed);
   if (key == 'd' || key == 'D') rotateCharacterY(rotationSpeed);
   if (key == 'w' || key == 'W') rotateCharacterX(-rotationSpeed);
@@ -235,7 +235,7 @@ void keyPressed() {
   if (key == 'f' || key == 'F') moveVertical(-movementSpeed);
   
   if (key == ' ' && !isJumping) startJump();
-}
+}*/
 void startJump() {
   isJumping = true;
   jumpProgress = 0;

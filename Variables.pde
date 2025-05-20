@@ -10,6 +10,9 @@ boolean mostrarActo1Incorrecto = false;
 boolean mostrarActo2Incorrecto = false;
 boolean mostrarActo3Incorrecto = false;
 
+PImage SakamotoSprite;
+PImage KatsuSprite;
+
 void keyPressed()
 {
   if((key == ' ' || keyCode == 32) && velocidad == 25 )
