@@ -1,47 +1,11 @@
-int letraActual = 0;
-int tiempoAnterior = 0;
-int velocidad = 25; // ms entre letras
-String textoActual = "";
-boolean mostrarActo0 = true;
-boolean mostrarActo1 = false;
-boolean mostrarActo2 = false;
-boolean mostrarActo3 = false;
-boolean mostrarActo1Incorrecto = false;
-boolean mostrarActo2Incorrecto = false;
-boolean mostrarActo3Incorrecto = false;
+/*// una curva de grado 3 (cúbica)
+// paramétrica y polinómica
+// Voy a utilizar una clase
 
-//Variables de escenas
-/*float ryomaX = 1200; // posición inicial
-float ryomaY = 150;
-float targetX = 600; // posición a la que se moverá
-float t = 0; // interpolación
-boolean moving = false;*/
+//Variables y objetos
+    curva mi_primera_curva;
 
-float u = 0; // parámetro de curva
-PVector posicionRyoma;
-curva trayectoria;
-
-int startTime;
-boolean flipped = false;
-
-
-PImage DecisionSprite;
-PImage CasaSprite;
-PImage SakamotoSprite;
-PImage KatsuSprite;
-
-void keyPressed()
-{
-  if((key == ' ' || keyCode == 32) && velocidad == 25 )
-  {
-    velocidad =5;
-  }
-  else if((key == ' ' || keyCode == 32) && velocidad ==5)
-   {
-     velocidad = 25; 
-   }
-}
-
+//Clases
 class curva
 { 
   //Atributos
@@ -115,3 +79,32 @@ class curva
   }
  
 }
+
+// Variables
+
+//Funciones
+void setup()
+{
+    size(800,600);
+    //Inventamos 1 curva
+     //Inventarnos sus puntos de control
+         PVector[] p;
+
+     p = new PVector[4];
+     p[0] = new PVector(200,200);   //Este es el punto de ctrl P0
+     p[1] = new PVector(300,300);   //Y este es el P1
+     p[2] = new PVector(400, 200);   //El P2
+     p[3] = new PVector(500, 300);   //P3
+     
+     //Llamamos al constructor de la curva
+     mi_primera_curva = new curva(p);
+     
+     //Calculamos sus coeficientes
+     mi_primera_curva.calcular_coefs();
+}
+//El draw pinta la curva
+void draw()
+{
+  background(0);
+  mi_primera_curva.pintar_curva();
+}*/

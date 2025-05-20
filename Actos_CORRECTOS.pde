@@ -49,4 +49,10 @@ void mostrarTextoProgresivo()
   fill(255, 220);
   //text(visible, 50, 50, 700, 500);
   text(visible, 100, 600, 1600, 250);
+  
+  if(textoActual.length() == letraActual)
+  {
+    image(DecisionSprite, 400, 500, 250, 90);
+    image(DecisionSprite, 1100, 500, 250, 90);
+  }
 }
