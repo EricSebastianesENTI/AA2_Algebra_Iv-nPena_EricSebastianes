@@ -44,6 +44,8 @@ curva trayectoria;
 int startTime;
 boolean flipped = false;
 
+boolean decisionTomada = false;
+int decisionActoActual = 0; // 0 = ninguna, 1 = izquierda, 2 = derecha
 
 PImage DecisionSprite;
 PImage CasaSprite;
@@ -134,4 +136,35 @@ class curva
     }
   }
  
+}
+void mousePressed() {
+  if (textoActual.length() == letraActual && !decisionTomada) {
+    boolean overSprite1 = mouseX > x1 && mouseX < x1 + w1 && mouseY > y1 && mouseY < y1 + h1;
+    boolean overSprite2 = mouseX > x2 && mouseX < x2 + w2 && mouseY > y2 && mouseY < y2 + h2;
+    
+    if (overSprite1 || overSprite2) {
+      decisionTomada = true;
+      decisionActoActual = overSprite1 ? 1 : 2;
+      
+      // Lógica para cambiar de acto según la decisión
+      if (mostrarActo0) {
+        if (decisionActoActual == 1) {
+          iniciarActo1Incorrecto(); // Camino incorrecto
+        } else {
+          iniciarActo1(); // Camino correcto
+        }
+      } 
+      else if (mostrarActo1) {
+        if (decisionActoActual == 1) {
+          iniciarActo2Incorrecto(); // Camino incorrecto
+        } else {
+          iniciarActo2(); // Camino correcto
+        }
+      }
+      // Añade más condiciones para otros actos según necesites
+      
+      // Reinicia para la nueva decisión
+      decisionTomada = false;
+    }
+  }
 }

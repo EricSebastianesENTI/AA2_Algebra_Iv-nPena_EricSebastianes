@@ -46,4 +46,19 @@ void draw()
     mostrarTextoProgresivo();
     
   }
+   else if (mostrarActo1 || mostrarActo1Incorrecto) {
+    // Aquí pondrías la cinemática del acto 1
+    generacionOndas();
+    mostrarTextoProgresivo();
+  } 
+  else if (mostrarActo2 || mostrarActo2Incorrecto) {
+    // Cinemática del acto 2
+    generacionOndas();
+    mostrarTextoProgresivo();
+  } 
+  else if (mostrarActo3 || mostrarActo3Incorrecto) {
+    // Cinemática del acto 3
+    generacionOndas();
+    mostrarTextoProgresivo();
+  }
 }
