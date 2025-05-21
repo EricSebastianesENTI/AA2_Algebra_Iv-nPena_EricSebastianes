@@ -1,23 +1,14 @@
-/*void Acto1()
-{
-    image(SakamotoSprite, 1200, 150, 220, 370);
-    image(KatsuSprite, 200, 150, 250, 400);
-  
-    pushMatrix();
-    translate(200 + 250, 150); // Mover el punto de dibujo al otro lado de la imagen
-    scale(-1, 1);              // Flip horizontal
-    image(KatsuSprite, 0, 0, 250, 400);
-    popMatrix();
-}*/
-
 void Acto1()
 {
   int elapsed = millis() - startTime;
 
   // Mostrar Katsu, aplicar flip después de 3 segundos
-  if (elapsed < 3000) {
+  if (elapsed < 3000)
+  {
     image(KatsuSprite, 200, 150, 250, 400);
-  } else {
+  }
+  else
+  {
     if (!flipped) flipped = true;
     pushMatrix();
     translate(200 + 250, 150);
