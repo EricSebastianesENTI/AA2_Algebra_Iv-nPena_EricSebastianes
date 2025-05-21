@@ -46,10 +46,13 @@ void mostrarTextoProgresivo()
   }
 
   String visible = textoActual.substring(0, letraActual);
-  fill(255, 220);
+  //fill(255, 220);
   //text(visible, 50, 50, 700, 500);
-  text(visible, 100, 600, 1600, 250);
-  
+  //text(visible, 100, 600, 1600, 250);
+  for (int i = 6; i > 0; i--) {
+    fill(255, 255, 255, 255);  // color cálido con transparencia
+    text(visible, 100, 600, 1600, 250);
+  }
   if(textoActual.length() == letraActual)
   {
     image(DecisionSprite, 400, 500, 250, 90);

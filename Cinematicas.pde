@@ -1,5 +1,7 @@
 void Acto1()
 {
+
+  
   int elapsed = millis() - startTime;
 
   // Mostrar Katsu, aplicar flip después de 3 segundos
@@ -26,4 +28,12 @@ void Acto1()
 
   // Dibujar a Ryoma
   image(SakamotoSprite, posicionRyoma.x, posicionRyoma.y, 220, 370);
+  
+    noFill();
+  
+
+
+   
+  
+  
 }

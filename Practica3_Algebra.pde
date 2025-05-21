@@ -1,5 +1,12 @@
 void setup()
 {
+
+      minim = new Minim(this);
+  player = minim.loadFile("kmk.mp3");
+  player.play();
+   colores();
+  
+  
   size(1800, 900, P3D);
   startTime = millis();
   background(0);
@@ -31,7 +38,11 @@ void draw()
   image(CasaSprite, 0, 0, 1800, 590);
   if (mostrarActo0) 
   {
-    mostrarTextoProgresivo();
+   
     Acto1();
+
+    generacionOndas();
+
+    mostrarTextoProgresivo();
   }
 }
