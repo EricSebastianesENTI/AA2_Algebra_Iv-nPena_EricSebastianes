@@ -31,6 +31,7 @@ void setup()
   DecisionSprite = loadImage("Decision.png");
   CasaSprite = loadImage("Casa.png");
   SakamotoAttackSprite = loadImage("RyomaAttack.png");
+  SakamotoTeaSprite = loadImage("RyomaTe.png");;
 }
 
 void draw()
@@ -39,25 +40,26 @@ void draw()
   image(CasaSprite, 0, 0, 1800, 590);
   if (mostrarActo0) 
   {
-   
     Acto1();
-
     generacionOndas();
-
     mostrarTextoProgresivo();
-    
   }
-   else if (mostrarActo1 || mostrarActo1Incorrecto) {
-    // Aquí pondrías la cinemática del acto 1
+   else if (mostrarActo1 || mostrarActo1Incorrecto)
+   {
+    //cinemática del acto 1
+    Acto2();
     generacionOndas();
     mostrarTextoProgresivo();
-  } 
-  else if (mostrarActo2 || mostrarActo2Incorrecto) {
+   } 
+  else if (mostrarActo2 || mostrarActo2Incorrecto)
+  {
     // Cinemática del acto 2
+    Acto2();
     generacionOndas();
     mostrarTextoProgresivo();
   } 
-  else if (mostrarActo3 || mostrarActo3Incorrecto) {
+  else if (mostrarActo3 || mostrarActo3Incorrecto)
+  {
     // Cinemática del acto 3
     generacionOndas();
     mostrarTextoProgresivo();

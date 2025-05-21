@@ -51,17 +51,18 @@ PImage DecisionSprite;
 PImage CasaSprite;
 PImage SakamotoSprite;
 PImage SakamotoAttackSprite;
+PImage SakamotoTeaSprite;
 PImage KatsuSprite;
 
 void keyPressed()
 {
   if((key == ' ' || keyCode == 32) && velocidad == 25 )
   {
-    velocidad =1;
+    velocidad = 5;
   }
   else if((key == ' ' || keyCode == 32) && velocidad ==5)
    {
-     velocidad = 50; 
+     velocidad = 25; 
    }
 }
 
@@ -139,19 +140,25 @@ class curva
  
 }
 void mousePressed() {
-  if (textoActual.length() == letraActual && !decisionTomada) {
+  if (textoActual.length() == letraActual && !decisionTomada)
+  {
     boolean overSprite1 = mouseX > x1 && mouseX < x1 + w1 && mouseY > y1 && mouseY < y1 + h1;
     boolean overSprite2 = mouseX > x2 && mouseX < x2 + w2 && mouseY > y2 && mouseY < y2 + h2;
     
-    if (overSprite1 || overSprite2) {
+    if (overSprite1 || overSprite2)
+    {
       decisionTomada = true;
       decisionActoActual = overSprite1 ? 1 : 2;
       
       // Lógica para cambiar de acto según la decisión
-      if (mostrarActo0) {
-        if (decisionActoActual == 1) {
+      if (mostrarActo0)
+      {
+        if (decisionActoActual == 1)
+        {
           iniciarActo1Incorrecto(); // Camino incorrecto
-        } else {
+        }
+        else
+        {
           iniciarActo1(); // Camino correcto
         }
       } 
@@ -162,7 +169,6 @@ void mousePressed() {
           iniciarActo2(); // Camino correcto
         }
       }
-      // Añade más condiciones para otros actos según necesites
       
       // Reinicia para la nueva decisión
       decisionTomada = false;
