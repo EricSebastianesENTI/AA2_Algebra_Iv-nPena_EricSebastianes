@@ -41,6 +41,10 @@ float u = 0; // parámetro de curva
 PVector posicionRyoma;
 curva trayectoria;
 
+PVector[] puntosBezier;
+curvaBezier curvaKatsu;
+float progresoKatsu = 0.0;
+
 int startTime;
 boolean flipped = false;
 
@@ -172,6 +176,43 @@ void mousePressed() {
       
       // Reinicia para la nueva decisión
       decisionTomada = false;
+    }
+  }
+}
+
+class curvaBezier {
+  // Atributos
+  PVector[] puntos_de_ctrl;
+
+  // Constructor
+  curvaBezier(PVector[] p) {
+    puntos_de_ctrl = new PVector[4];
+    for (int i = 0; i < 4; i++) {
+      puntos_de_ctrl[i] = p[i].copy();
+    }
+  }
+
+  // Métodos
+  void pintar_curva() {
+    float x, y;
+    strokeWeight(5);
+    stroke(255, 255, 0); // Amarillo
+
+    for (float u = 0.0; u <= 1.0; u += 0.01) {
+      // Fórmula de Bézier cúbica
+      float oneMinusU = 1 - u;
+
+      x = oneMinusU * oneMinusU * oneMinusU * puntos_de_ctrl[0].x +
+          3 * oneMinusU * oneMinusU * u * puntos_de_ctrl[1].x +
+          3 * oneMinusU * u * u * puntos_de_ctrl[2].x +
+          u * u * u * puntos_de_ctrl[3].x;
+
+      y = oneMinusU * oneMinusU * oneMinusU * puntos_de_ctrl[0].y +
+          3 * oneMinusU * oneMinusU * u * puntos_de_ctrl[1].y +
+          3 * oneMinusU * u * u * puntos_de_ctrl[2].y +
+          u * u * u * puntos_de_ctrl[3].y;
+
+      point(x, y);
     }
   }
 }
