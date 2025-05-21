@@ -21,7 +21,21 @@ color colorA = color(0, 0, 50);
 color colorB = color(255, 100, 150); 
 float tiempo = 0;
 
+int ancho = 250;
+int largo = 90;
 
+int ancho1 = 250;
+int largo1 = 90;
+
+int x1 = 400;
+int y1 = 500;
+int w1 = ancho;
+int h1 = largo;
+
+int x2 = 1100;
+int y2 = 500;
+int w2 = ancho1;
+int h2 = largo1;
 
 float u = 0; // parámetro de curva
 PVector posicionRyoma;
@@ -40,11 +54,11 @@ void keyPressed()
 {
   if((key == ' ' || keyCode == 32) && velocidad == 25 )
   {
-    velocidad =5;
+    velocidad =1;
   }
   else if((key == ' ' || keyCode == 32) && velocidad ==5)
    {
-     velocidad = 25; 
+     velocidad = 50; 
    }
 }
 

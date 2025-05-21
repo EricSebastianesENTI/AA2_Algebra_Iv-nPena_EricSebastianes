@@ -49,14 +49,30 @@ void mostrarTextoProgresivo()
   //fill(255, 220);
   //text(visible, 50, 50, 700, 500);
   //text(visible, 100, 600, 1600, 250);
-  for (int i = 6; i > 0; i--) {
+  for (int i = 6; i > 0; i--)
+  {
     fill(255, 255, 255, 255);  // color cálido con transparencia
     text(visible, 100, 600, 1600, 250);
   }
   if(textoActual.length() == letraActual)
   {
-    image(DecisionSprite, 400, 500, 250, 90);
-    image(DecisionSprite, 1100, 500, 250, 90);
-  }
-  
+    boolean overSprite1 = mouseX > x1 && mouseX < x1 + w1 && mouseY > y1 && mouseY < y1 + h1;
+    boolean overSprite2 = mouseX > x2 && mouseX < x2 + w2 && mouseY > y2 && mouseY < y2 + h2;
+    
+    if (overSprite1)
+    {
+    image(DecisionSprite, x1, y1, w1 + 10, h1 + 10);
+    image(DecisionSprite, x2, y2, w2, h2);
+    }
+    else if (overSprite2)
+    {
+    image(DecisionSprite, x1, y1, w1, h1);
+    image(DecisionSprite, x2, y2, w2 + 10, h2 + 10);
+    }
+    else
+    {
+    image(DecisionSprite, x1, y1, w1, h1);
+    image(DecisionSprite, x2, y2, w2, h2);
+    }
+ }
 }
