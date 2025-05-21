@@ -50,6 +50,7 @@ int decisionActoActual = 0; // 0 = ninguna, 1 = izquierda, 2 = derecha
 PImage DecisionSprite;
 PImage CasaSprite;
 PImage SakamotoSprite;
+PImage SakamotoAttackSprite;
 PImage KatsuSprite;
 
 void keyPressed()
