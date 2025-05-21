@@ -48,6 +48,7 @@ boolean flipped = false;
 PImage DecisionSprite;
 PImage CasaSprite;
 PImage SakamotoSprite;
+PImage SakamotoAttackSprite;
 PImage KatsuSprite;
 
 void keyPressed()

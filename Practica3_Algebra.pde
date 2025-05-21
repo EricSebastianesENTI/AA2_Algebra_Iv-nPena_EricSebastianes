@@ -30,6 +30,7 @@ void setup()
   KatsuSprite = loadImage("Katsu.png");
   DecisionSprite = loadImage("Decision.png");
   CasaSprite = loadImage("Casa.png");
+  SakamotoAttackSprite = loadImage("RyomaAttack.png");
 }
 
 void draw()

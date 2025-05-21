@@ -1,7 +1,5 @@
 void Acto1()
 {
-
-  
   int elapsed = millis() - startTime;
 
   // Mostrar Katsu, aplicar flip después de 3 segundos
@@ -20,20 +18,20 @@ void Acto1()
   }
 
   // Mover a Ryoma usando interpolación después de 3 segundos
-  if (flipped && u < 1.0) {
+  if (flipped && u < 1.0)
+  {
     u += 0.01; // velocidad
     posicionRyoma.x = trayectoria.coefs[0].x + trayectoria.coefs[1].x * u + trayectoria.coefs[2].x * u * u + trayectoria.coefs[3].x * u * u * u;
     posicionRyoma.y = trayectoria.coefs[0].y + trayectoria.coefs[1].y * u + trayectoria.coefs[2].y * u * u + trayectoria.coefs[3].y * u * u * u;
   }
 
-  // Dibujar a Ryoma
-  image(SakamotoSprite, posicionRyoma.x, posicionRyoma.y, 220, 370);
-  
+ if (flipped)
+ {
+    image(SakamotoAttackSprite, posicionRyoma.x, posicionRyoma.y, 270, 370);
+  }
+  else
+  {
+    image(SakamotoSprite, posicionRyoma.x, posicionRyoma.y, 220, 370);
+  }  
     noFill();
-  
-
-
-   
-  
-  
 }
