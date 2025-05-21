@@ -44,5 +44,6 @@ void draw()
     generacionOndas();
 
     mostrarTextoProgresivo();
+    
   }
 }

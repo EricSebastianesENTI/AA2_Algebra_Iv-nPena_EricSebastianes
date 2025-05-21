@@ -58,4 +58,5 @@ void mostrarTextoProgresivo()
     image(DecisionSprite, 400, 500, 250, 90);
     image(DecisionSprite, 1100, 500, 250, 90);
   }
+  
 }

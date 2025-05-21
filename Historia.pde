@@ -3,7 +3,7 @@ String historiaActo0 =
   "Un alto funcionario del shogunato llamado Katsu Kaishu tomaba, apaciblemente, té en su casa.\n\n" +
   "En ese momento, un intrépido samurái de nombre Sakamoto Ryoma apareció con su katana desenvainada.\n\n" +
   "Su propósito era claro, asesinar a Kaishu por traición al shogunato, pues este era acusado por negociar con “bárbaros occidentales”.\n\n" +
-  "Kaishu, sin inmutarse, le sirvió una taza de té: ¿Vienes a matarme Sakamoto? Hazlo. Pero antes, dime: ¿qué Japón quieres salvar?";
+  "Kaishu, sin inmutarse, le sirvió una taza de té: ¿Vienes a matarme Sakamoto? Hazlo. Pero antes, dime: ";
   
  //Acto 1
  String historiaActo1 = 

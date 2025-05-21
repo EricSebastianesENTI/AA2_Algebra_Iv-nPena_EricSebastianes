@@ -17,6 +17,12 @@ float targetX = 600; // posición a la que se moverá
 float t = 0; // interpolación
 boolean moving = false;*/
 
+color colorA = color(0, 0, 50);     
+color colorB = color(255, 100, 150); 
+float tiempo = 0;
+
+
+
 float u = 0; // parámetro de curva
 PVector posicionRyoma;
 curva trayectoria;
