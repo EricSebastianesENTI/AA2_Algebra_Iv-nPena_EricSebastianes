@@ -23,6 +23,7 @@ void iniciarHistoriaActo2() {
   tiempoAnterior = millis();
   mostrarActo1 = false;
   mostrarActo2 = true;
+  decisionTomada = false;
 }
 
 void iniciarHistoriaActo2Final() {
@@ -47,8 +48,10 @@ void iniciarHistoriaActo3Final() {
   mostrarActo3 = false;
   iniciarhistoriaActo3Final = true;
 }
+
 //Funcion que escribe el texto
-void mostrarTextoProgresivo() {
+void mostrarTextoProgresivo()
+{
   int ahora = millis();
   if (letraActual < textoActual.length() && ahora - tiempoAnterior > velocidad) {
     letraActual++;
@@ -59,7 +62,7 @@ void mostrarTextoProgresivo() {
   fill(255, 255, 255, 255);
   text(visible, 100, 600, 1600, 250);
   
-  if(textoActual.length() == letraActual)
+  if(textoActual.length() == letraActual && !mostrarActo1)
   {
     boolean overSprite1 = mouseX > x1 && mouseX < x1 + w1 && mouseY > y1 && mouseY < y1 + h1;
     boolean overSprite2 = mouseX > x2 && mouseX < x2 + w2 && mouseY > y2 && mouseY < y2 + h2;
@@ -81,13 +84,15 @@ void mostrarTextoProgresivo() {
       text("Tomar té", x1 + w1/2 - 40, y1 + h1/2);
       text("Escuchar", x2 + w2/2 - 40, y2 + h2/2);
     } 
-    else if (mostrarActo1) {
-      text("Mostrar armas", x1 + w1/2 - 70, y1 + h1/2);
-      text("Mostrar documentos", x2 + w2/2 - 90, y2 + h2/2);
+    else if (mostrarActo2) {
+      text("", x1 + w1/2 - 70, y1 + h1/2);
+      text("", x2 + w2/2 - 90, y2 + h2/2);
     }
     else if (mostrarActo2 && textoActual.equals(historiaActo2Final)) {
-      text("Con reservas", x1 + w1/2 - 50, y1 + h1/2);
-      text("Sin reservas", x2 + w2/2 - 50, y2 + h2/2);
+     /* text("Con reservas", x1 + w1/2 - 50, y1 + h1/2);
+      text("Sin reservas", x2 + w2/2 - 50, y2 + h2/2);*/
+      text("Mostrar armas", x1 + w1/2 - 70, y1 + h1/2);
+      text("Mostrar documentos", x2 + w2/2 - 90, y2 + h2/2);
     }
     else if (mostraracto2Incorrecto2) {
       text("Dinero", x1 + w1/2 - 30, y1 + h1/2);

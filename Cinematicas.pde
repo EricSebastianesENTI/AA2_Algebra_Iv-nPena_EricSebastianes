@@ -81,3 +81,25 @@ void Acto2()
     progresoKatsu = min(progresoKatsu + 0.003, 1.0);
   }
 }
+
+void Acto3()
+{
+  textSize(20);
+  image(TemploSprite, 0, 0, 1800, 590);
+  
+ image(KidoSprite,1100, 230, 200, 350);
+ image(SaigoSprite,1300, 230, 250, 350);
+  
+  pushMatrix();
+    translate(200 + 250, 150);
+    scale(-1, 1);
+    image(KatsuIdle, -500, 17, 250, 410);
+    popMatrix();
+    
+    pushMatrix();
+    translate(200 + 250, 150);
+    scale(-1, 1);
+    image(SakamotoSprite, -250, 30, 230, 400);
+    popMatrix();
+  
+}

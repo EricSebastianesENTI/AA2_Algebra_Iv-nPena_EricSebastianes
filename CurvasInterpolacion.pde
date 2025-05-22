@@ -1,11 +1,3 @@
-/*// una curva de grado 3 (cúbica)
-// paramétrica y polinómica
-// Voy a utilizar una clase
-
-//Variables y objetos
-    curva mi_primera_curva;
-
-//Clases
 class curva
 { 
   //Atributos
@@ -79,32 +71,3 @@ class curva
   }
  
 }
-
-// Variables
-
-//Funciones
-void setup()
-{
-    size(800,600);
-    //Inventamos 1 curva
-     //Inventarnos sus puntos de control
-         PVector[] p;
-
-     p = new PVector[4];
-     p[0] = new PVector(200,200);   //Este es el punto de ctrl P0
-     p[1] = new PVector(300,300);   //Y este es el P1
-     p[2] = new PVector(400, 200);   //El P2
-     p[3] = new PVector(500, 300);   //P3
-     
-     //Llamamos al constructor de la curva
-     mi_primera_curva = new curva(p);
-     
-     //Calculamos sus coeficientes
-     mi_primera_curva.calcular_coefs();
-}
-//El draw pinta la curva
-void draw()
-{
-  background(0);
-  mi_primera_curva.pintar_curva();
-}*/
