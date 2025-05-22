@@ -58,10 +58,18 @@ void draw()
   }
    else if (mostrarActo1 || mostrarActo1Incorrecto)
    {
-    //cinemática del acto 1
-    Acto2();
-    generacionOndas();
-    mostrarTextoProgresivo();
+     if(mostrarActo1)
+     {
+        //cinemática del acto 1
+        Acto2();
+        generacionOndas();
+        mostrarTextoProgresivo();
+     }
+     else
+     {
+         generacionOndas();
+        mostrarTextoProgresivo();
+     }
    } 
   else if (mostrarActo2 || mostrarActo2Incorrecto)
   {

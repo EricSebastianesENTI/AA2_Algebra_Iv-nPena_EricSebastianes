@@ -57,7 +57,8 @@ void mostrarTextoProgresivo() {
       image(DecisionSprite, x1, y1, w1 + 10, h1 + 10);
       image(DecisionSprite, x2, y2, w2, h2);
     } 
-    else if (overSprite2) {
+    else if (overSprite2)
+    {
       image(DecisionSprite, x1, y1, w1, h1);
       image(DecisionSprite, x2, y2, w2 + 10, h2 + 10);
     } 
@@ -73,7 +74,7 @@ void mostrarTextoProgresivo() {
     if (mostrarActo0)
     {
       text("secuestrar", x1 + w1/2 - 60, y1 + h1/2);
-      text("Escuchar a Kaishu", x2 + w2/2 - 80, y2 + h2/2);
+      text("Escuchar a Kaistu", x2 + w2/2 - 80, y2 + h2/2);
     } 
     else if (mostrarActo1) 
     {

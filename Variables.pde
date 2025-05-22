@@ -2,20 +2,13 @@ int letraActual = 0;
 int tiempoAnterior = 0;
 int velocidad = 25; // ms entre letras
 String textoActual = "";
-boolean mostrarActo0 = true;
+boolean mostrarActo0 = false;
 boolean mostrarActo1 = false;
 boolean mostrarActo2 = false;
 boolean mostrarActo3 = false;
 boolean mostrarActo1Incorrecto = false;
 boolean mostrarActo2Incorrecto = false;
 boolean mostrarActo3Incorrecto = false;
-
-//Variables de escenas
-/*float ryomaX = 1200; // posición inicial
-float ryomaY = 150;
-float targetX = 600; // posición a la que se moverá
-float t = 0; // interpolación
-boolean moving = false;*/
 
 color colorA = color(0, 0, 50);     
 color colorB = color(255, 100, 150); 
