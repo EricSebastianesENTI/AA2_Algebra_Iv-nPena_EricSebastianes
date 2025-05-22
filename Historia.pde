@@ -92,5 +92,5 @@ String acto3Incorrecto3 =
 String acto2Incorrecto2 =
 "Bowser se da cuenta que a quien secuestró no era Peach sino un hombre, Bowser enfadado va a recriminarle al shogun y lo calcina con su aliento de fuego,\n" +
 "haciendo que Bowser pase a ser el shogun. Bowser todavia tiene encerrado a Kaishu,\n" +
-"Sakamoto iria en el rescate de Kaishu y este se choca con Wario en su moto y este le pide ayuda para seguir a Bowser y Wario le pregunta ¿Y yo que gano?,\n" +
-"Sakamoto le respondio que si l acompañaba irian al castillo del shogun donde hay muchas riquezas, por lo que Wario accedió";
+"Sakamoto iria en el rescate de Kaishu y este se choca con Wario en su moto y este le pide ayuda para seguir a Bowser y Wario le pregunta ¿Y yo qué gano?,\n" +
+"Sakamoto le respondio que si lo acompañaba irian al castillo del shogun donde hay muchas riquezas, por lo que Wario accedió";
