@@ -152,7 +152,8 @@ void setup()
   KidoSprite = loadImage("Kido.png");
   SaigoSprite = loadImage("Saigo.png");
     
-   botonOriginal = loadImage("Decision.png"); botonConLUT = aplicarLUTBotones(botonOriginal); 
+   botonOriginal = loadImage("Decision.png"); 
+   botonConLUT = aplicarLUTBotones(botonOriginal); 
 
   ShogunSprite = loadImage("RyomaSakamoto.png");
   shogunQuemado = loadImage("RyomaSakamoto.png");

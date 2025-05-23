@@ -1,7 +1,7 @@
 PImage botonOriginal;
 PImage botonConLUT;
         
-
+   //PImage botonProcesado = aplicarLUTBotones(DecisionSprite);
 
 
 PImage applyBurnLUT(PImage original) 

@@ -113,8 +113,8 @@ void mousePressed() {
         }
       }
       else if (mostrarActo1Incorrecto) {
-      Wario();
-        // iniciaracto2Incorrecto2();
+        iniciarWario();
+        iniciaracto2Incorrecto2();
       }
       else if (mostraracto2Incorrecto2) {
         if (decisionActoActual == 1) {
