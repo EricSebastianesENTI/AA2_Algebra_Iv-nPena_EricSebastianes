@@ -102,6 +102,11 @@ void mostrarTextoProgresivo() {
       text("Mostrar armas", x1 + w1/2 - 70, y1 + h1/2);
       text("Mostrar documentos", x2 + w2/2 - 90, y2 + h2/2);
     }
+    else if (mostrarhistoriaActo2Final)
+    {
+      text("Armas", x1 + w1/2 - 10, y1 + h1/2);
+      text("Documentos", x2 + w2/2 - 10, y2 + h2/2);
+    }
     else if (mostraracto2Incorrecto2) {
       text("Dinero", x1 + w1/2 - 30, y1 + h1/2);
       text("Comida", x2 + w2/2 - 30, y2 + h2/2);

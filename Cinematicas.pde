@@ -822,6 +822,8 @@ void inicializarEscenaEstrellaFinal() {
   escenaEstrellaIniciada = true;
   estadoEstrella = 0;
   tiempoEventoEstrella = millis();
+  letraActual = 0;
+  textoActual = acto3Incorrecto3;
 
   posRyomaEstrella = new PVector(200, 1000);
   posMercenario = new PVector(1000, 100);
@@ -832,6 +834,11 @@ void inicializarEscenaEstrellaFinal() {
 }
 
 void EscenaEstrellaFinal() {
+  
+  mostrarActo3 = false;
+  letraActual = 0;
+  textoActual = acto3Incorrecto3;
+  
   if (!escenaEstrellaIniciada) {
     escenaEstrellaIniciada = true;
     tiempoEventoEstrella = millis();

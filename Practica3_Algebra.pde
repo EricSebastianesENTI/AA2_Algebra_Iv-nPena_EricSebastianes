@@ -55,8 +55,8 @@ void setup()
    botonOriginal = loadImage("Decision.png"); 
    botonConLUT = aplicarLUTBotones(botonOriginal); 
 
-  ShogunSprite = loadImage("RyomaSakamoto.png");
-  shogunQuemado = loadImage("RyomaSakamoto.png");
+  ShogunSprite = loadImage("Iemochi.png");
+  shogunQuemado = loadImage("Iemochi.png");
   WarioSprite = loadImage("wario.png");
   ExclamacionSprite = loadImage("RyomaSakamoto.png");
   fondoScroll = loadImage("Casa.png");
@@ -71,7 +71,7 @@ MercenarioSprite = loadImage("RyomaSakamoto.png");
 fondoCampo = loadImage("Casa.png");
 SakamotoHeridoSprite = loadImage("SakamotoHerido.png");
 
-estrellaSprite = loadImage("wario.png");
+estrellaSprite = loadImage("Estrella.png");
 
 Iemochi = loadImage("Iemochi.png");
 Consejero = loadImage("Consejero.png");
@@ -117,6 +117,12 @@ void draw() {
   ElefanteEscena();
   mostrarTextoProgresivo();
   }
+  
+  else if (escenaEstrellaIniciada)
+    {
+      EscenaEstrellaFinal();
+      mostrarTextoProgresivo();
+    }
   
   else if (mostraracto2Incorrecto2) {
     image(fondoScroll, 0, 0, 1800, 590);

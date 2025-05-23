@@ -172,6 +172,13 @@ void mousePressed() {
           decisionTomada = false;
           mostrarOpciones = false;
         }
+        else
+        {
+        //inicializarEscenaEstrellaFinal();
+        EscenaEstrellaFinal();
+        decisionTomada = false;
+          mostrarOpciones = false;
+        }
       }
       else if (mostrarActo1Incorrecto) {
         iniciaracto2Incorrecto2();
