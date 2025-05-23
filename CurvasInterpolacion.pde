@@ -69,5 +69,4 @@ class curva
     point(x,y);
     }
   }
- 
 }

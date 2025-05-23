@@ -30,7 +30,7 @@ void iniciaracto2Incorrecto2() {
   textoActual = acto2Incorrecto2;
   letraActual = 0;
   tiempoAnterior = millis();
-  mostrarActo1Incorrecto = false; // Asegúrate de limpiar este estado
+  mostrarActo1Incorrecto = false;
   mostraracto2Incorrecto2 = true;
     warioIniciado = false;
 }

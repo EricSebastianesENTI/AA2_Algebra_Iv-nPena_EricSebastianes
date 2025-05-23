@@ -165,6 +165,9 @@ void setup()
   escenaFinal1 = loadImage("Casa.png");
   escenaFinal2 = loadImage("Casa.png");
   escenaFinal3 = loadImage("Casa.png");
+  
+   Iemochi = loadImage("Iemochi.png");
+  Consejero = loadImage("Iemochi.png");
 }
 void draw() {
   background(0);
@@ -196,7 +199,8 @@ void draw() {
       generacionOndas();
       mostrarTextoProgresivo();
     }
-    else {
+    else 
+    {
       
     }
   }
