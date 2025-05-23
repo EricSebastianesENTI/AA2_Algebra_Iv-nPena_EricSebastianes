@@ -65,7 +65,12 @@ PImage SakamotoSprite;
 PImage SakamotoAttackSprite;
 PImage SakamotoTeaSprite;
 PImage KatsuSprite;
+
+PImage KatsuIdle;
+PImage KidoSprite;
+PImage SaigoSprite;
 PImage TemploSprite;
+
 
 PImage Bowser;
 PImage KatsuBowser;
