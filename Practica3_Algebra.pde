@@ -74,7 +74,7 @@ SakamotoHeridoSprite = loadImage("SakamotoHerido.png");
 estrellaSprite = loadImage("wario.png");
 
 Iemochi = loadImage("Iemochi.png");
-Consejero = loadImage("Iemochi.png");
+Consejero = loadImage("Consejero.png");
 }
 
 void draw() {
