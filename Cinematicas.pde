@@ -102,7 +102,32 @@ textSize(20);
     popMatrix();
 }
 
+void Acto4()
+{
+// Iemochi con un FlipX
+pushMatrix();
+translate(200 + 250, 150);
+scale(-1, 1);
+image(Iemochi, -250, 30, 230, 400);
+popMatrix();
 
+// Mover Consejero suavemente hacia su objetivo
+if (animarConsejero) {
+  float dx = objetivoX - xConsejero;
+  xConsejero += dx * easing;
+
+  // Si está muy cerca, detén la animación
+  if (abs(dx) < 1) {
+    xConsejero = objetivoX;
+    animarConsejero = false;
+  }
+}
+
+// Dibujar Consejero
+image(Consejero, xConsejero, yConsejero, 230, 400);
+  
+
+}
 
 
 int tiempoInicioSecuestro = -1;
