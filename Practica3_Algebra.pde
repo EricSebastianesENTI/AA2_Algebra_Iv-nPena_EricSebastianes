@@ -74,6 +74,17 @@ estrellaSprite = loadImage("wario.png");
 
 Iemochi = loadImage("Iemochi.png");
 Consejero = loadImage("Iemochi.png");
+
+
+//Ultima curva de la cinematica final
+    PVector[] puntos = new PVector[4];
+        puntos[0] = new PVector(1200, 150);
+        puntos[1] = new PVector(1000, 200);
+        puntos[2] = new PVector(800, 180);
+        puntos[3] = new PVector(600, 150);
+   
+
+
 }
 
 void draw() {

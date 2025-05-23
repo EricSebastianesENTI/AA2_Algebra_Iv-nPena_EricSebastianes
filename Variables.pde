@@ -91,6 +91,11 @@ float objetivoX = 800;         // Posición final al lado de Iemochi
 float easing = 0.05;           // Suavidad
 boolean animarConsejero = true;
 
+float velocidadU = 0.005; // controla la velocidad de animación
+boolean animando = true;
+
+curva trayectoriaRyoma;
+
 void keyPressed()
 {
   if((key == ' ' || keyCode == 32) && velocidad == 25 )
@@ -123,19 +128,21 @@ void mousePressed() {
         mostrarOpciones = false;
       }
 
-      else if (mostrarActo1) {
+      else if (mostrarActo1) 
+      {
         iniciarHistoriaActo2();
         decisionTomada = false;
         mostrarOpciones = false;
       }
 
-      else if (mostrarActo2) {
-        if (decisionActoActual == 2) {
+      else if (mostrarActo2)
+      {
+        if (decisionActoActual == 2) 
+        {
           iniciarHistoriaActo2Final(); // Te llevará al acto 4
           decisionTomada = false;
           mostrarOpciones = false;
         }
-        // Si eliges 1, NO pasa nada: se conserva el estado y siguen las opciones visibles
       }
 
       else if (mostrarActo1Incorrecto) {
