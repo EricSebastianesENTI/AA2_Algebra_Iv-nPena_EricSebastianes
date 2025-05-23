@@ -82,6 +82,8 @@ PImage WarioSprite;
 PImage ExclamacionSprite;
 PImage fondoScroll, fondoTemplo, fondoCalleWario;
 PImage MarioShogunSprite;
+PImage Iemochi;
+PImage Consejero;
 
 
 

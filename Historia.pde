@@ -35,7 +35,6 @@ String historiaActo0 =
   
   //Acto 3
   String historiaActo3 = 
-  "Acto 3 (3):\n\n" +
   "En el castillo de Osaka, se encontraba el joven y enfermizo shogun Iemochi Tokugawa. " +
   "Su incompetencia a la hora de tratar con los extranjeros lo ha llevado a una poderosa rebelión.\n\n" +
   "Consejero: \"Majestad, Satsuma y Chōshū han unido fuerzas. El 70% de los daimios apoyan su rebelión.\"\n" +
