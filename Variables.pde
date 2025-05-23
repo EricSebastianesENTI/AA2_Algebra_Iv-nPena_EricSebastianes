@@ -91,10 +91,7 @@ float objetivoX = 800;         // Posición final al lado de Iemochi
 float easing = 0.05;           // Suavidad
 boolean animarConsejero = true;
 
-float velocidadU = 0.005; // controla la velocidad de animación
-boolean animando = true;
-
-curva trayectoriaRyoma;
+PImage SakamotoHeridoSprite;
 
 void keyPressed()
 {
@@ -139,7 +136,17 @@ void mousePressed() {
       {
         if (decisionActoActual == 2) 
         {
-          iniciarHistoriaActo2Final(); // Te llevará al acto 4
+          iniciarHistoriaActo2Final();
+          decisionTomada = false;
+          mostrarOpciones = false;
+        }
+      }
+      
+      else if (mostrarActo3)
+      {
+        if (decisionActoActual == 2) 
+        {
+          iniciarHistoriaActo3Final();
           decisionTomada = false;
           mostrarOpciones = false;
         }

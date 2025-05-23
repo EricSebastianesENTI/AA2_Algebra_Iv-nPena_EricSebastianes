@@ -69,22 +69,12 @@ void setup()
   SakamotoSprite = loadImage("RyomaSakamoto.png");
 MercenarioSprite = loadImage("RyomaSakamoto.png");
 fondoCampo = loadImage("Casa.png");
+SakamotoHeridoSprite = loadImage("RyomaSakamoto.png");
 
 estrellaSprite = loadImage("wario.png");
 
 Iemochi = loadImage("Iemochi.png");
 Consejero = loadImage("Iemochi.png");
-
-
-//Ultima curva de la cinematica final
-    PVector[] puntos = new PVector[4];
-        puntos[0] = new PVector(1200, 150);
-        puntos[1] = new PVector(1000, 200);
-        puntos[2] = new PVector(800, 180);
-        puntos[3] = new PVector(600, 150);
-   
-
-
 }
 
 void draw() {
@@ -114,6 +104,11 @@ void draw() {
     image(TemploSprite, 0, 0, 1800, 590);
     Acto4();
   }
+    else if (iniciarhistoriaActo3Final) 
+    {
+      CinematicaFinalCorrecta();    
+    }
+  
   else if (mostraracto2Incorrecto2) {
     image(fondoScroll, 0, 0, 1800, 590);
     Wario();

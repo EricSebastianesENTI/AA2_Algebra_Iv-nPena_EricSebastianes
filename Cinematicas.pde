@@ -162,28 +162,18 @@ void Acto4()
 void CinematicaFinalCorrecta()
 {
   image(TemploSprite, 0, 0, 1800, 590);
+        pushMatrix();
+        translate(200 + 250, 150);
+        scale(-1, 1);
+        image(SakamotoSprite, -250, 30, 230, 400);
+        popMatrix();
 
-  if (animando && u <= 1.0) {
-    u += velocidadU;
-  } else {
-    animando = false;
-    // Aquí podrías empezar a mostrar el texto completo o iniciar fundido, etc
-  }
-
-  // Calcular la posición en la curva usando el polinomio de coeficientes
-  float x = trayectoriaRyoma.coefs[0].x + trayectoriaRyoma.coefs[1].x * u + trayectoriaRyoma.coefs[2].x * u*u + trayectoriaRyoma.coefs[3].x * u*u*u;
-  float y = trayectoriaRyoma.coefs[0].y + trayectoriaRyoma.coefs[1].y * u + trayectoriaRyoma.coefs[2].y * u*u + trayectoriaRyoma.coefs[3].y * u*u*u;
-
-  // Dibujar a Ryoma en esa posición (por ejemplo)
-  image(SakamotoSprite, x, y, 230, 400);
-
-  // Opcional: dibujar la curva para debug (puedes comentarlo luego)
-  // trayectoriaRyoma.pintar_curva();
-
-  // Mostrar texto progresivo cuando termine la animación
-  if (!animando) {
-    mostrarTextoProgresivo(); // tu función que muestra texto letra a letra
-  }
+    //sprite herido
+    pushMatrix();
+    translate(200 + 250, 150);
+    scale(-1, 1);
+    image(SakamotoHeridoSprite, -250, 30, 230, 400);
+    popMatrix();
 }
 
 
