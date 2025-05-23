@@ -121,7 +121,8 @@ void keyPressed()
 
 
 void mousePressed() {
-  if (textoActual.length() == letraActual && !decisionTomada) {
+  if (textoActual.length() == letraActual && !decisionTomada)
+  {
     boolean overSprite1 = mouseX > x1 && mouseX < x1 + w1 && mouseY > y1 && mouseY < y1 + h1;
     boolean overSprite2 = mouseX > x2 && mouseX < x2 + w2 && mouseY > y2 && mouseY < y2 + h2;
     
@@ -129,10 +130,13 @@ void mousePressed() {
       decisionTomada = true;
       decisionActoActual = overSprite1 ? 1 : 2;
 
-      if (mostrarActo0) {
+      if (mostrarActo0)
+      {
         if (decisionActoActual == 1) {
           iniciarActo1Incorrecto();
-        } else {
+        } 
+        else 
+        {
           iniciarActo1();
         }
         decisionTomada = false;
@@ -154,6 +158,10 @@ void mousePressed() {
           decisionTomada = false;
           mostrarOpciones = false;
         }
+         else 
+          {
+            iniciartextoPreActo3Elefante(); // <-- esta es tu cinemática alternativa
+          }
       }
       
       else if (mostrarActo3)
@@ -165,11 +173,6 @@ void mousePressed() {
           mostrarOpciones = false;
         }
       }
-      
- /*               iniciartextoPreActo3Elefante();
-           decisionTomada = false;
-          mostrarOpciones = false;*/
-
       else if (mostrarActo1Incorrecto) {
         iniciaracto2Incorrecto2();
         decisionTomada = false;

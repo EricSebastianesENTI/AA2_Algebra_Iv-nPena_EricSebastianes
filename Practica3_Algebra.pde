@@ -111,6 +111,13 @@ void draw() {
     {
       CinematicaFinalCorrecta();    
     }
+    
+    else if (mostrartextoPreActo3Elefante)
+    {
+  image(TemploSprite, 0, 0, 1800, 590);
+  ElefanteEscena();
+  mostrarTextoProgresivo();
+  }
   
   else if (mostraracto2Incorrecto2) {
     image(fondoScroll, 0, 0, 1800, 590);
