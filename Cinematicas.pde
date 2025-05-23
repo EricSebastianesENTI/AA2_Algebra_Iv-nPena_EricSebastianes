@@ -171,6 +171,7 @@ void CinematicaFinalCorrecta()
 
 
 void ElefanteEscena() {
+  image(TemploSprite, 0, 0, 1800, 590);
   if (!elefanteEscenaIniciada) {
     elefanteEscenaIniciada = true;
     tiempoElefante = millis();

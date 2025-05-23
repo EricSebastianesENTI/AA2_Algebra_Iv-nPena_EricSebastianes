@@ -114,7 +114,6 @@ void draw() {
     
     else if (mostrartextoPreActo3Elefante)
     {
-  image(TemploSprite, 0, 0, 1800, 590);
   ElefanteEscena();
   mostrarTextoProgresivo();
   }
