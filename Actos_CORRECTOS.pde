@@ -65,10 +65,12 @@ void mostrarTextoProgresivo() {
     boolean overSprite2 = mouseX > x2 && mouseX < x2 + w2 && mouseY > y2 && mouseY < y2 + h2;
     
     if (overSprite1) {
-       aplicarLUTBotones(DecisionSprite);
+      image(botonConLUT,x1, y1, w1, h1);
       image(DecisionSprite, x1, y1, w1 + 10, h1 + 10);
-      aplicarLUTBotones(DecisionSprite);
+      
+      image(botonConLUT,x1, y1, w1, h1);
       image(DecisionSprite, x2, y2, w2, h2);
+      
      aplicarLUTBotones(DecisionSprite);
     } else if (overSprite2) {
       image(DecisionSprite, x1, y1, w1, h1);

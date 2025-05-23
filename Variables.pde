@@ -104,30 +104,22 @@ void mousePressed() {
       decisionTomada = true;
       decisionActoActual = overSprite1 ? 1 : 2;
 
-      // Lógica completa de decisiones
-      if (mostrarActo0) 
-      {
-        if (decisionActoActual == 1) 
-        {
+      // Lógica de decisiones
+      if (mostrarActo0) {
+        if (decisionActoActual == 1) {
           iniciarActo1Incorrecto();
-        } 
-        else 
-        {
+        } else {
           iniciarActo1();
         }
       }
-      else if (mostrarActo1Incorrecto) 
-      {
-        iniciaracto2Incorrecto2();
+      else if (mostrarActo1Incorrecto) {
+      Wario();
+        // iniciaracto2Incorrecto2();
       }
-      else if (mostraracto2Incorrecto2) 
-      {
-        if (decisionActoActual == 1) 
-        {
+      else if (mostraracto2Incorrecto2) {
+        if (decisionActoActual == 1) {
           iniciaracto2WarioDinero();
-        } 
-        else 
-        {
+        } else {
           iniciaracto2WarioComida();
         }
       }

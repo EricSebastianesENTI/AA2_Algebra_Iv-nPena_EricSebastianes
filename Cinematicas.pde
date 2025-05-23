@@ -231,7 +231,7 @@ boolean warioIniciado = false;
 boolean bowserRiendo = false;
 
 void iniciarWario() {
-  textoActual = acto2Incorrecto2;
+  //textoActual = acto2Incorrecto2;
   warioIniciado = true;
   estadoWario = 0;
   tiempoEvento = millis();
@@ -261,9 +261,9 @@ void drawFlippedX(PImage img, float x, float y, float w, float h) {
 
 
 void Wario() {
-  /*if (!warioIniciado) {
+  if (!warioIniciado) {
     iniciarWario();
-  }*/
+  }
 
   image(fondoScroll, 0, 0,  1800, 590);
 

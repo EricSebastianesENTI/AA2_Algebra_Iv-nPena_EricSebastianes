@@ -1,3 +1,9 @@
+PImage botonOriginal;
+PImage botonConLUT;
+        
+
+
+
 PImage applyBurnLUT(PImage original) 
 {
   PImage result = createImage(original.width, original.height, ARGB);

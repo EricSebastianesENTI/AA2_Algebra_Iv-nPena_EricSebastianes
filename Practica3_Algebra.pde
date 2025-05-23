@@ -151,7 +151,8 @@ void setup()
     KatsuIdle = loadImage("KatsuIdle.png");
   KidoSprite = loadImage("Kido.png");
   SaigoSprite = loadImage("Saigo.png");
-  
+    
+   botonOriginal = loadImage("Decision.png"); botonConLUT = aplicarLUTBotones(botonOriginal); 
 
   ShogunSprite = loadImage("RyomaSakamoto.png");
   shogunQuemado = loadImage("RyomaSakamoto.png");
@@ -164,8 +165,66 @@ void setup()
   escenaFinal2 = loadImage("Casa.png");
   escenaFinal3 = loadImage("Casa.png");
 }
-
 void draw() {
+  background(0);
+  // Lógica de visualización de actos
+  if (mostrarActo0) {
+    image(CasaSprite, 0, 0, 1800, 590);
+    Acto1();
+    generacionOndas();
+    mostrarTextoProgresivo();
+  }
+  else if (mostrarActo1 || mostrarActo1Incorrecto) {
+    if(mostrarActo1) {
+      image(CasaSprite, 0, 0, 1800, 590);
+      Acto2();
+      generacionOndas();
+      mostrarTextoProgresivo();
+    }
+    else {
+      image(CasaSprite, 0, 0, 1800, 590);
+      BowserSecuestraKatsu();
+      generacionOndas();
+      mostrarTextoProgresivo();
+    }
+  } 
+  else if (mostrarActo2 || mostrarActo2Incorrecto) {
+    if(mostrarActo2) {
+      image(TemploSprite, 0, 0, 1800, 590);
+      Acto3();
+      generacionOndas();
+      mostrarTextoProgresivo();
+    }
+    else {
+      // No hacer nada especial aquí, ya que se maneja en las transiciones
+    }
+  }
+  else if (mostrarActo3 || mostrarActo3Incorrecto) {
+    generacionOndas();
+    mostrarTextoProgresivo();
+  }
+  
+  // Transiciones automáticas
+  if (mostrarActo1 && textoActual.length() == letraActual && !decisionTomada) {
+    delay(1000);
+    iniciarHistoriaActo2();  
+  }
+  
+/*  if (mostrarActo1Incorrecto && textoActual.length() == letraActual && !decisionTomada) {
+    delay(1000);
+    // Solo iniciar acto2Incorrecto2 si no estamos ya en él
+    if (!mostraracto2Incorrecto2) {
+      iniciaracto2Incorrecto2();
+    }
+  }*/
+  
+  // Añade esta condición para manejar la transición desde acto2Incorrecto2
+  if (mostraracto2Incorrecto2 && textoActual.length() == letraActual && !decisionTomada) {
+    delay(1000);
+    mostrarOpciones = true; // Mostrar opciones para continuar
+  }
+}
+/*void draw() {
   background(0);
   // Lógica de visualización de actos
   if (mostrarActo0) 
@@ -228,4 +287,4 @@ void draw() {
     delay(1000);
     iniciaracto2Incorrecto2();
   }
-}
+}*/
