@@ -75,6 +75,9 @@ estrellaSprite = loadImage("wario.png");
 
 Iemochi = loadImage("Iemochi.png");
 Consejero = loadImage("Consejero.png");
+
+ElefanteSprite = loadImage("KidoElefante.png");
+CaparazonSprite = loadImage("CaparazonAzul.png");
 }
 
 void draw() {

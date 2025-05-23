@@ -93,6 +93,20 @@ boolean animarConsejero = true;
 
 PImage SakamotoHeridoSprite;
 
+// Variables para Elefante y Caparazón
+PVector posElefante = new PVector(800, 500);
+PVector posCaparazon = new PVector(1900, 0);
+boolean elefanteEscenaIniciada = false;
+int estadoElefante = 0;
+int tiempoElefante = 0;
+boolean elefanteVolando = false;
+float elefanteFlipEscala = 1;
+float anguloCaparazon = 0;
+
+PImage ElefanteSprite;
+PImage CaparazonSprite;
+
+
 void keyPressed()
 {
   if((key == ' ' || keyCode == 32) && velocidad == 25 )

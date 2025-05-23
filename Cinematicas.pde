@@ -162,20 +162,112 @@ void Acto4()
 void CinematicaFinalCorrecta()
 {
   image(TemploSprite, 0, 0, 1800, 590);
-        pushMatrix();
-        translate(200 + 250, 150);
-        scale(-1, 1);
-        image(SakamotoSprite, -250, 30, 230, 400);
-        popMatrix();
-
-    //sprite herido
     pushMatrix();
     translate(200 + 250, 150);
     scale(-1, 1);
-    image(SakamotoHeridoSprite, -250, 30, 230, 400);
+    image(SakamotoHeridoSprite, -250, 30, 300, 370);
     popMatrix();
 }
 
+
+void ElefanteEscena() {
+  if (!elefanteEscenaIniciada) {
+    elefanteEscenaIniciada = true;
+    tiempoElefante = millis();
+    posElefante = new PVector(800, 500);
+    posCaparazon = new PVector(width + 100, 100); 
+    estadoElefante = 0;
+    elefanteVolando = false;
+    elefanteFlipEscala = 1;
+    anguloCaparazon = 0;
+  }
+
+  background(0); 
+  imageMode(CENTER);
+
+  if (estadoElefante == 0) {
+    // --- Estado 0: Elefante hace flips durante 2 segundos ---
+    float duracion = millis() - tiempoElefante;
+
+    elefanteFlipEscala = sin(radians(frameCount * 15)) > 0 ? 1 : -1;
+
+    pushMatrix();
+    translate(posElefante.x, posElefante.y);
+    scale(elefanteFlipEscala, 1);
+    image(ElefanteSprite, 0, 0, 260, 370);
+    popMatrix();
+
+    if (duracion > 2000) {
+      estadoElefante = 1;
+      tiempoElefante = millis();
+    }
+
+  } else if (estadoElefante == 1) {
+    // --- Estado 1: Caparazón entra desde la derecha y se coloca sobre el elefante ---
+    if (posCaparazon.x > posElefante.x) {
+      posCaparazon.x -= 15;  // Se desplaza horizontalmente hacia el elefante
+    } else {
+      estadoElefante = 2;
+      tiempoElefante = millis();
+    }
+
+    image(ElefanteSprite, posElefante.x, posElefante.y, 260, 370);
+    image(CaparazonSprite, posCaparazon.x, posCaparazon.y, 80, 80);
+
+  } else if (estadoElefante == 2) {
+    // --- Estado 2: Caparazón gira sobre el elefante ---
+    anguloCaparazon += 0.3;
+    if (millis() - tiempoElefante > 1500) {
+      estadoElefante = 3;
+      tiempoElefante = millis();
+    }
+
+    image(ElefanteSprite, posElefante.x, posElefante.y, 260, 370);
+    pushMatrix();
+    translate(posElefante.x, posElefante.y - 100);
+    rotate(anguloCaparazon);
+    image(CaparazonSprite, 0, 0, 80, 80);
+    popMatrix();
+
+  } else if (estadoElefante == 3) {
+    // --- Estado 3: El caparazón cae en picado ---
+    posCaparazon.y += 20;
+
+    image(ElefanteSprite, posElefante.x, posElefante.y, 260, 370);
+    image(CaparazonSprite, posElefante.x, posCaparazon.y, 80, 80);
+
+    if (posCaparazon.y >= posElefante.y) {
+      estadoElefante = 4;
+      tiempoElefante = millis();
+    }
+
+  } else if (estadoElefante == 4) {
+    // --- Estado 4: Elefante sale volando tras el impacto ---
+    posElefante.x += 20;
+    posElefante.y -= 12;
+
+    pushMatrix();
+    translate(posElefante.x, posElefante.y);
+    rotate(radians(frameCount * 10));
+    image(ElefanteSprite, 0, 0, 260, 370);
+    popMatrix();
+
+    if (posElefante.x > width || posElefante.y < -200) {
+      estadoElefante = 5;
+      tiempoElefante = millis();
+    }
+
+    // Caparazón queda quieto en el punto de impacto
+    image(CaparazonSprite, posElefante.x - 50, posElefante.y + 50, 80, 80);
+
+  } else if (estadoElefante == 5) {
+    // --- Estado final: texto de cierre ---
+    fill(255);
+    textAlign(CENTER);
+    textSize(30);
+    text("¡El elefante ha sido eliminado!", width / 2, height / 2);
+  }
+}
 
 
 int tiempoInicioSecuestro = -1;
