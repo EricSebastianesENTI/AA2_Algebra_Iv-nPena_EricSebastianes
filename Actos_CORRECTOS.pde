@@ -59,7 +59,7 @@ void mostrarTextoProgresivo() {
   fill(255, 255, 255, 255);
   text(visible, 100, 600, 1600, 250);
 
-  if(textoActual.length() == letraActual && !mostrarActo1)
+  if(textoActual.length() == letraActual && !mostrarActo1 ||textoActual.length() == letraActual && !mostrarActo1Incorrecto)
   {
     boolean overSprite1 = mouseX > x1 && mouseX < x1 + w1 && mouseY > y1 && mouseY < y1 + h1;
     boolean overSprite2 = mouseX > x2 && mouseX < x2 + w2 && mouseY > y2 && mouseY < y2 + h2;

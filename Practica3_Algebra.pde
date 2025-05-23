@@ -206,7 +206,7 @@ void draw() {
      }
      else
      {
-       
+     
      }
   } 
   else if (mostrarActo3 || mostrarActo3Incorrecto)
