@@ -147,7 +147,7 @@ void setup()
   SakamotoTeaSprite = loadImage("RyomaTe.png");
   Bowser = loadImage("Bowser.png");
   KatsuBowser = loadImage("KatsuBowser.png");
-  
+  MarioShogunSprite = loadImage("Kido.png");
     KatsuIdle = loadImage("KatsuIdle.png");
   KidoSprite = loadImage("Kido.png");
   SaigoSprite = loadImage("Saigo.png");
@@ -155,13 +155,14 @@ void setup()
 
   ShogunSprite = loadImage("RyomaSakamoto.png");
   shogunQuemado = loadImage("RyomaSakamoto.png");
-  WarioSprite = loadImage("RyomaSakamoto.png");
+  WarioSprite = loadImage("wario.png");
   ExclamacionSprite = loadImage("RyomaSakamoto.png");
   fondoScroll = loadImage("Casa.png");
   fondoTemplo = loadImage("Casa.png");
   fondoCalleWario = loadImage("Casa.png");
-
-  
+  escenaFinal1 = loadImage("Casa.png");
+  escenaFinal2 = loadImage("Casa.png");
+  escenaFinal3 = loadImage("Casa.png");
 }
 
 void draw() {
@@ -171,7 +172,7 @@ void draw() {
   {
     image(CasaSprite, 0, 0, 1800, 590);
     //Acto1();
-    Wario();
+   WarioDinero();
     generacionOndas();
     mostrarTextoProgresivo();
   }

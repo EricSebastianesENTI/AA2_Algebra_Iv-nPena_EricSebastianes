@@ -80,7 +80,7 @@ PImage shogunQuemado;
 PImage WarioSprite;
 PImage ExclamacionSprite;
 PImage fondoScroll, fondoTemplo, fondoCalleWario;
-
+PImage MarioShogunSprite;
 
 void keyPressed()
 {
@@ -108,7 +108,8 @@ void mousePressed() {
         if (decisionActoActual == 1) {
           iniciarActo1Incorrecto();
         } else {
-          iniciarActo1();
+          //iniciarActo1();
+          WarioDinero();
         }
       }
       else if (mostrarActo1Incorrecto) {

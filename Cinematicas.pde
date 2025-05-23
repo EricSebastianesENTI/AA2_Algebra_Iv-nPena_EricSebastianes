@@ -216,7 +216,7 @@ void BowserSecuestraKatsu() {
 
 float scrollX = 0;
 int estadoWario = 0;
-int tiempoEvento = 0;
+
 boolean shogunCalcinado = false;
 
 PVector posBowser = new PVector(width/2 - 125, height/2 - 190);
@@ -355,5 +355,101 @@ void Wario() {
       drawFlippedX(SakamotoSprite, posRyoma.x, posRyoma.y + offset, 220, 370);
       image(WarioSprite, posWario.x-100, posWario.y - offset, 220, 370);  // No flippado
     }
+  }
+}
+
+
+
+boolean warioDineroIniciado = false;
+int estadoWarioDinero = 0;
+int tiempoEvento = 0;
+
+// Variables de animación específicas
+float ryomaRotacion = 0;
+boolean ryomaCayendo = false;
+float posBowserX = 100;
+float posWarioX = 800;
+float posRyomaX;
+float posRyomaY = 600;
+float ryomaCaidaY = 300;
+PImage escenaFinal1, escenaFinal2, escenaFinal3; // Asegúrate de cargarlas antes
+
+void WarioDinero() {
+  if (!warioDineroIniciado) {
+    warioDineroIniciado = true;
+    estadoWarioDinero = 0;
+    tiempoEvento = millis();
+    posBowserX = 100;
+    posWarioX = 800;
+    posRyomaX = 600;
+    ryomaRotacion = 0;
+    ryomaCayendo = false;
+    ryomaCaidaY = 300;
+  }
+
+  background(0);
+
+  if (estadoWarioDinero == 0) {
+    // ---------- ESCENA PRINCIPAL ----------
+    image(fondoCalleWario, 0, 0, 1800, 590);
+
+    // Bowser se acerca a Ryoma
+    if (posBowserX < posRyomaX - 120) {
+      posBowserX += 2;
+    } else {
+      ryomaCayendo = true;
+    }
+
+    // Wario se va completamente fuera de la pantalla
+    if (posWarioX < width + 300) {
+      posWarioX += 3.5;
+    }
+
+    // Ryoma cae rotando más abajo
+    if (ryomaCayendo && ryomaCaidaY < height - 50) {
+      ryomaCaidaY += 5;
+      ryomaRotacion += 0.1;
+    }
+
+    // Dibujar Wario
+    image(WarioSprite, posWarioX, 150, 370, 370);
+
+    // Dibujar Bowser flipeado horizontalmente
+    pushMatrix();
+    translate(posBowserX + 190, 300);
+    scale(-1, 1);
+    image(Bowser, -125, -190, 380, 380);
+    popMatrix();
+
+    // Dibujar Ryoma rotando mientras cae
+    pushMatrix();
+    translate(posRyomaX + 110, ryomaCaidaY + 185);
+    rotate(ryomaRotacion);
+    image(SakamotoSprite, -110, -250, 220, 370);
+    popMatrix();
+
+    // Espera para pasar a las escenas finales
+    if (millis() - tiempoEvento > 6000) {
+      estadoWarioDinero = 1;
+      tiempoEvento = millis();
+    }
+
+  } else if (estadoWarioDinero == 1) {
+    image(escenaFinal1, 0, 0, 1800, 590);
+    if (millis() - tiempoEvento > 3000) {
+      estadoWarioDinero = 2;
+      tiempoEvento = millis();
+    }
+
+  } else if (estadoWarioDinero == 2) {
+    image(escenaFinal2, 0, 0, 1800, 590);
+    if (millis() - tiempoEvento > 3000) {
+      estadoWarioDinero = 3;
+      tiempoEvento = millis();
+    }
+
+  } else if (estadoWarioDinero == 3) {
+    image(escenaFinal3, 0, 0, 1800, 590);
+    // Fin de animación
   }
 }
