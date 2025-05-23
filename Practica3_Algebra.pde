@@ -69,7 +69,7 @@ void setup()
   SakamotoSprite = loadImage("RyomaSakamoto.png");
 MercenarioSprite = loadImage("RyomaSakamoto.png");
 fondoCampo = loadImage("Casa.png");
-SakamotoHeridoSprite = loadImage("RyomaSakamoto.png");
+SakamotoHeridoSprite = loadImage("SakamotoHerido.png");
 
 estrellaSprite = loadImage("wario.png");
 
