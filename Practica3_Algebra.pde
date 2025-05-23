@@ -165,15 +165,96 @@ void setup()
   escenaFinal1 = loadImage("Casa.png");
   escenaFinal2 = loadImage("Casa.png");
   escenaFinal3 = loadImage("Casa.png");
+  
+  SakamotoSprite = loadImage("RyomaSakamoto.png");
+MercenarioSprite = loadImage("RyomaSakamoto.png");
+fondoCampo = loadImage("Casa.png");
+
+estrellaSprite = loadImage("wario.png");
 }
+void draw() {
+  background(0);
+  
+  if (mostrarActo0) {
+    image(CasaSprite, 0, 0, 1800, 590);
+    Acto1();
+    generacionOndas();
+    mostrarTextoProgresivo();
+  }
+  else if (mostrarActo1 || mostrarActo1Incorrecto) {
+    if(mostrarActo1) {
+      image(CasaSprite, 0, 0, 1800, 590);
+      Acto2();
+      generacionOndas();
+      mostrarTextoProgresivo();
+    }
+    else {
+      image(CasaSprite, 0, 0, 1800, 590);
+      BowserSecuestraKatsu();
+      generacionOndas();
+      mostrarTextoProgresivo();
+    }
+  } 
+  else if (mostrarActo2 || mostrarActo2Incorrecto) {
+    if(mostrarActo2) {
+      image(TemploSprite, 0, 0, 1800, 590);
+      Acto3();
+      generacionOndas();
+      mostrarTextoProgresivo();
+    }
+    else {
+      // No hacer nada especial aquí
+    }
+  }
+  else if (mostraracto2Incorrecto2) {
+    image(fondoScroll, 0, 0, 1800, 590);
+    Wario();
+    generacionOndas();
+    mostrarTextoProgresivo();
+  }
+  else if (mostraracto2WarioDinero) {
+    image(fondoCalleWario, 0, 0, 1800, 590);
+    WarioDinero();
+    generacionOndas();
+    mostrarTextoProgresivo();
+  }
+  else if (warioFinalIniciado) { // Nueva condición
+    image(fondoCalleWario, 0, 0, 1800, 590);
+    WarioFinal();
+    generacionOndas();
+    mostrarTextoProgresivo();
+  }
+  else if (mostrarActo3 || mostrarActo3Incorrecto) {
+    generacionOndas();
+    mostrarTextoProgresivo();
+  }
+  
+  // Transiciones automáticas
+  if (mostrarActo1 && textoActual.length() == letraActual && !decisionTomada) {
+    delay(1000);
+    iniciarHistoriaActo2();  
+  }
+  
+  if (mostraracto2Incorrecto2 && textoActual.length() == letraActual && !decisionTomada) {
+    delay(1000);
+    mostrarOpciones = true;
+  }
+}
+
+/*
+
+
+
 void draw() {
   background(0);
   // Lógica de visualización de actos
   if (mostrarActo0) {
     image(CasaSprite, 0, 0, 1800, 590);
     Acto1();
+      //WarioFinal();
     generacionOndas();
     mostrarTextoProgresivo();
+    //EscenaEstrellaFinal();
   }
   else if (mostrarActo1 || mostrarActo1Incorrecto) {
     if(mostrarActo1) {
@@ -225,13 +306,16 @@ void draw() {
       iniciaracto2Incorrecto2();
     }
   }*/
-  
-  // Añade esta condición para manejar la transición desde acto2Incorrecto2
+  //////////////////////////////////////////////////////////////
+ /* // Añade esta condición para manejar la transición desde acto2Incorrecto2
   if (mostraracto2Incorrecto2 && textoActual.length() == letraActual && !decisionTomada) {
     delay(1000);
     mostrarOpciones = true; // Mostrar opciones para continuar
   }
 }
+
+
+*/
 /*void draw() {
   background(0);
   // Lógica de visualización de actos

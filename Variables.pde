@@ -9,7 +9,7 @@ boolean mostrarActo3 = false;
 boolean mostrarActo1Incorrecto = false;
 boolean mostrarActo2Incorrecto = false;
   boolean iniciarhistoriaActo3Final = false;
-
+boolean mostraracto2WarioFinal = false;
 boolean mostrarhistoriaActo2Final = false;
 boolean mostrarhistoriaActo3Final  = false;
 boolean mostraracto2Incorrecto2  = false;
@@ -83,6 +83,8 @@ PImage ExclamacionSprite;
 PImage fondoScroll, fondoTemplo, fondoCalleWario;
 PImage MarioShogunSprite;
 
+
+
 void keyPressed()
 {
   if((key == ' ' || keyCode == 32) && velocidad == 25 )
@@ -104,7 +106,6 @@ void mousePressed() {
       decisionTomada = true;
       decisionActoActual = overSprite1 ? 1 : 2;
 
-      // Lógica de decisiones
       if (mostrarActo0) {
         if (decisionActoActual == 1) {
           iniciarActo1Incorrecto();
@@ -113,60 +114,18 @@ void mousePressed() {
         }
       }
       else if (mostrarActo1Incorrecto) {
-        //iniciarWario();
         iniciaracto2Incorrecto2();
       }
       else if (mostraracto2Incorrecto2) {
         if (decisionActoActual == 1) {
           iniciaracto2WarioDinero();
         } else {
-          iniciaracto2WarioComida();
+          iniciarWarioFinal();
         }
       }
-      else if (mostrarActo1) 
-      {
-        // Transición automática se maneja en draw()
-      }
-      else if (mostrarActo2 && textoActual.equals(historiaActo2)) 
-      {
-        if (decisionActoActual == 1) 
-        {
-          iniciarActo2Incorrecto();
-        } 
-        else 
-        {
-          iniciarHistoriaActo2Final();
-        }
-      }
-      else if (mostrarActo2Incorrecto) 
-      {
-        iniciartextoPreActo3Elefante();
-      }
-      else if (mostrartextoPreActo3Elefante) 
-      {
-        if (decisionActoActual == 1) 
-        {
-          iniciaracto3Incorrecto2();
-        } 
-        else 
-        {
-          iniciarActo3Incorrecto();
-        }
-      }
-      else if (mostrarHistoriaActo2Final) {
-        iniciarActo3();
-      }
-      else if (mostrarActo3) {
-        if (decisionActoActual == 1) {
-          iniciarHistoriaActo3Final();
-        } else {
-          iniciaracto3Incorrecto3();
-        }
-      }
-      
+   
       decisionTomada = false;
       mostrarOpciones = false;
-
     }
   }
 }

@@ -72,3 +72,36 @@ PImage aplicarLUTBotones(PImage img) {
   out.updatePixels();
   return out;
 }
+
+
+color colorHSB(float h, float s, float b, float a) {
+  colorMode(HSB, 255);
+  color c = color(h, s, b, a);
+  colorMode(RGB, 255);  // Restaurar
+  return c;
+}
+
+
+
+PImage generateColorfulLUT(PImage original) {
+    PImage img = createImage(original.width, original.height, ARGB);
+  original.loadPixels();
+  img.loadPixels();
+
+  // Oscilación sinusoidal de color en el eje hue
+  float hueShift = (sin(radians(frameCount * 4)) * 127 + 128) % 255;
+
+  for (int i = 0; i < original.pixels.length; i++) {
+    color c = original.pixels[i];
+    float alpha = alpha(c);
+
+    if (alpha > 0) {
+      img.pixels[i] = colorHSB(hueShift, 255, 255, alpha);
+    } else {
+      img.pixels[i] = color(0, 0);
+    }
+  }
+
+  img.updatePixels();
+  return img;
+}  

@@ -374,7 +374,8 @@ void Wario() {
       float offset = sin(frameCount * 0.1) * 5;
       drawFlippedX(SakamotoSprite, posRyoma.x, posRyoma.y + offset, 220, 370);
       drawFlippedX(WarioSprite, posWario.x-100, posWario.y - offset, 370, 370);  // No flippado
-    }
+    
+  }
   }
 }
 
@@ -471,5 +472,275 @@ void WarioDinero() {
   } else if (estadoWarioDinero == 3) {
     image(escenaFinal3, 0, 0, 1800, 590);
     // Fin de animación
+  }
+}
+
+
+
+
+
+
+PVector posRyomaFinal, posWarioFinal, posBowserFinal;
+boolean warioFinalIniciado = false;
+int estadoWarioFinal = 0;
+int tiempoEventoFinal = 0;
+float warioRotacionFinal = 0;
+boolean warioGirandoFinal = false;
+float velocidadWarioFinal = 0;
+
+PImage imagenFinal1, imagenFinal2;
+
+
+void iniciarWarioFinal() {
+  posRyomaFinal = new PVector(50, 200);
+  posWarioFinal = new PVector(-400, 200);
+  posBowserFinal = new PVector(width - 650, 380);
+
+  warioFinalIniciado = true;
+  estadoWarioFinal = 0;
+  tiempoEventoFinal = millis();
+  warioRotacionFinal = 0;
+  warioGirandoFinal = false;
+  velocidadWarioFinal = 0;
+}
+void WarioFinal() {
+if (!warioFinalIniciado) {
+    // Inicialización de variables para la animación final
+    warioFinalIniciado = true;
+    tiempoEventoFinal = millis();
+  }
+  background(0);
+  image(fondoCalleWario, 0, 0, 1800, 590);
+
+  if (estadoWarioFinal == 0) {
+    // ESCENA 0: Entrada
+    if (posRyomaFinal.x < width / 2 - 100) posRyomaFinal.x += 3;
+    if (posWarioFinal.x < width / 2 - 250) posWarioFinal.x += 3;
+
+    pushMatrix();
+    translate(posRyomaFinal.x + 220, posRyomaFinal.y);
+    scale(-1, 1);
+    image(SakamotoSprite, 0, 0, 220, 370);
+    popMatrix();
+
+    image(WarioSprite, posWarioFinal.x, posWarioFinal.y, 370, 370);
+
+   
+    translate(posBowserFinal.x + 190, posBowserFinal.y);
+   
+    image(Bowser, -125, -190, 380, 380);
+   
+    if (millis() - tiempoEventoFinal > 3000) {
+      estadoWarioFinal = 1;
+      tiempoEventoFinal = millis();
+    }
+
+  } else if (estadoWarioFinal == 1) {
+    // ESCENA 1: Conversación
+    float offset = sin(frameCount * 0.1) * 5;
+
+    pushMatrix();
+    translate(posRyomaFinal.x + 220, posRyomaFinal.y + offset);
+    scale(-1, 1);
+    image(SakamotoSprite, 0, 0, 220, 370);
+    popMatrix();
+
+    image(WarioSprite, posWarioFinal.x, posWarioFinal.y - offset, 370, 370);
+
+
+    translate(posBowserFinal.x + 190, posBowserFinal.y);
+
+    image(Bowser, -125, -190, 380, 380);
+
+
+    if (millis() - tiempoEventoFinal > 3000) {
+      estadoWarioFinal = 2;
+      tiempoEventoFinal = millis();
+      warioGirandoFinal = true;
+    }
+
+  } else if (estadoWarioFinal == 2) {
+    // ESCENA 2: Giro y embestida
+    pushMatrix();
+    translate(posRyomaFinal.x + 220, posRyomaFinal.y);
+    scale(-1, 1);
+    image(SakamotoSprite, 0, 0, 220, 370);
+    popMatrix();
+
+    if (warioGirandoFinal && warioRotacionFinal < 8 * TWO_PI) {
+      warioRotacionFinal += 0.4;
+      posWarioFinal.y -= 1.2;
+      pushMatrix();
+      translate(posWarioFinal.x + 110, posWarioFinal.y + 185);
+      rotate(warioRotacionFinal);
+      imageMode(CENTER);
+      image(WarioSprite, 0, 0, 370, 370);
+      imageMode(CORNER);
+      popMatrix();
+    } else {
+      warioGirandoFinal = false;
+      velocidadWarioFinal = 10;
+      posWarioFinal.x += velocidadWarioFinal;
+      image(WarioSprite, posWarioFinal.x, posWarioFinal.y, 370, 370);
+
+      if (posWarioFinal.x + 220 >= posBowserFinal.x) {
+        estadoWarioFinal = 3;
+        tiempoEventoFinal = millis();
+      }
+    }
+
+    pushMatrix();
+    translate(posBowserFinal.x + 190, posBowserFinal.y);
+    scale(-1, 1);
+    image(Bowser, -125, -190, 380, 380);
+    popMatrix();
+
+  } else if (estadoWarioFinal == 3) {
+    // ESCENA 3: Bowser sale volando
+    pushMatrix();
+    translate(posRyomaFinal.x + 220, posRyomaFinal.y);
+    scale(-1, 1);
+    image(SakamotoSprite, 0, 0, 220, 370);
+    popMatrix();
+
+    image(WarioSprite, posWarioFinal.x, posWarioFinal.y, 370, 370);
+
+    posBowserFinal.y -= 12;
+    posBowserFinal.x += 6;
+
+    pushMatrix();
+    translate(posBowserFinal.x + 190, posBowserFinal.y);
+    scale(-1, 1);
+    image(Bowser, -125, -190, 380, 380);
+    popMatrix();
+
+    if (millis() - tiempoEventoFinal > 1000) {
+      estadoWarioFinal = 4;
+      tiempoEventoFinal = millis();
+    }
+
+  } else if (estadoWarioFinal == 4) {
+    // ESCENA 4: Imagen final 1
+    image(CasaSprite, 0, 0, 1800, 590);
+
+    if (millis() - tiempoEventoFinal > 3000) {
+      estadoWarioFinal = 5;
+      tiempoEventoFinal = millis();
+    }
+
+  } else if (estadoWarioFinal == 5) {
+    // ESCENA 5: Imagen final 2
+    image(CasaSprite, 0, 0, 1800, 590);
+  }
+}
+
+
+boolean escenaEstrellaIniciada = false;
+int estadoEstrella = 0;
+int tiempoEventoEstrella = 0;
+
+PVector posRyomaEstrella = new PVector(200, 300);
+PVector posMercenario = new PVector(1000, 300);
+
+boolean mercenarioGolpeado = false;
+
+PImage sakamotoLUT;  // LUT de Ryoma con efecto de estrella
+PImage MercenarioSprite;  // Sprite del mercenario con fusil
+PImage fondoCampo;          // Fondo de la escena
+
+PVector posEstrella;
+boolean estrellaActiva = false;
+PImage estrellaSprite;
+
+void inicializarEscenaEstrellaFinal() {
+  escenaEstrellaIniciada = true;
+  estadoEstrella = 0;
+  tiempoEventoEstrella = millis();
+
+  posRyomaEstrella = new PVector(200, 1000);
+  posMercenario = new PVector(1000, 100);
+  mercenarioGolpeado = false;
+
+  posEstrella = new PVector(posRyomaEstrella.x + 80, -100);  // Empieza arriba
+  estrellaActiva = false;
+}
+
+void EscenaEstrellaFinal() {
+  if (!escenaEstrellaIniciada) {
+    escenaEstrellaIniciada = true;
+    tiempoEventoEstrella = millis();
+    posEstrella = new PVector(posRyomaEstrella.x + 80, -100);  // Empieza desde arriba
+    estrellaActiva = false;
+  }
+
+  background(0);
+  image(CasaSprite, 0, 0, 1800, 590);
+
+  if (estadoEstrella == 0) {
+    // --- ESCENA INICIAL: RYOMA, MERCENARIO Y ESTRELLA ---
+    image(SakamotoSprite, posRyomaEstrella.x, posRyomaEstrella.y-150, 220, 370);
+    image(MercenarioSprite, posMercenario.x, posMercenario.y-150, 220, 370);
+
+    if (posEstrella.y < posRyomaEstrella.y - 20) {
+      posEstrella.y += 5;
+    } else {
+      estrellaActiva = true;
+      estadoEstrella = 1;
+      tiempoEventoEstrella = millis();
+    }
+    image(estrellaSprite, posEstrella.x, posEstrella.y, 60, 60);
+
+  } else if (estadoEstrella == 1) {
+    // --- RYOMA CON ESTRELLA (COLORINES) ---
+    sakamotoLUT = generateColorfulLUT(SakamotoSprite);
+    image(sakamotoLUT, posRyomaEstrella.x, posRyomaEstrella.y-150, 220, 370);
+    image(MercenarioSprite, posMercenario.x, posMercenario.y-150, 220, 370);
+
+    if (millis() - tiempoEventoEstrella > 1000) {
+      estadoEstrella = 2;
+      tiempoEventoEstrella = millis();
+    }
+
+  } else if (estadoEstrella == 2) {
+    // --- EMBESTIDA DE RYOMA ---
+    posRyomaEstrella.x += 45;
+
+    if (!mercenarioGolpeado) {
+      sakamotoLUT = generateColorfulLUT(SakamotoSprite);
+      image(sakamotoLUT, posRyomaEstrella.x, posRyomaEstrella.y-150, 220, 370);
+      image(MercenarioSprite, posMercenario.x, posMercenario.y-150, 220, 370);
+
+      if (posRyomaEstrella.x + 180 >= posMercenario.x) {
+        mercenarioGolpeado = true;
+      }
+
+    } else {
+      // --- MERCENARIO SALE VOLANDO ROTANDO ---
+      posMercenario.x += 12;
+      posMercenario.y -= 6;
+
+      sakamotoLUT = generateColorfulLUT(SakamotoSprite);
+      image(sakamotoLUT, posRyomaEstrella.x, posRyomaEstrella.y-150, 220, 370);
+
+      pushMatrix();
+      translate(posMercenario.x + 110, posMercenario.y + 185);
+      rotate(radians(frameCount * 12));
+      image(MercenarioSprite, -110, posRyomaEstrella.y-150, 220, 370);
+      popMatrix();
+
+      if (posMercenario.x > width) {
+        estadoEstrella = 3;
+        tiempoEventoEstrella = millis();
+      }
+    }
+
+  } else if (estadoEstrella == 3) {
+    // --- FINAL: RYOMA VICTORIOSO ---
+    sakamotoLUT = generateColorfulLUT(SakamotoSprite);
+    image(sakamotoLUT, posRyomaEstrella.x, posRyomaEstrella.y, 220, 370);
+    fill(255);
+    textAlign(CENTER);
+    textSize(30);
+    text("¡Ryoma ha vencido con el poder de la estrella!", width / 2, 100);
   }
 }

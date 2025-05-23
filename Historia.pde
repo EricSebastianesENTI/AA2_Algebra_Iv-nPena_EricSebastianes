@@ -74,7 +74,8 @@ String acto2Incorrecto = "Ryoma les dice que han encontrado estas extrañas occi
 String acto2Incorrecto2 =
 "Bowser se da cuenta que a quien secuestró no era Peach sino un hombre, Bowser enfadado va a recriminarle al shogun y lo calcina con su aliento de fuego,\n" +
 "haciendo que Bowser pase a ser el shogun. Bowser todavia tiene encerrado a Kaishu,\n" +
-"Sakamoto iria en el rescate de Kaishu y este se choca con Wario en su moto y este le pide ayuda para seguir a Bowser y Wario le pregunta ¿Y yo qué gano?,\n" ;
+"Sakamoto iria en el rescate de Kaishu y este se choca con Wario en su moto y este le pide ayuda para seguir a Bowser y Wario le pregunta ¿Y yo qué gano?,\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 //"Sakamoto le respondio que si lo acompañaba irian al castillo del shogun donde hay muchas riquezas, por lo que Wario accedió"; Dinero/comida
 
 //(4)
@@ -90,7 +91,7 @@ String acto2WarioDinero =
 "Wario se escabuye por el palacio para saquearlo como el avaro que es. Y, sin su ayuda, Ryoma no puede derrotar al malvado bowser y acaba encerrado con Kaishu.\n" +
 "Bowser se convierte definitivamente en el nuevo shogun de japón. Pero su reinado del terror duraría más bien poco.\n" +
 "Ya que Wario, al haber robado todo el oro del templo, dejó a japón en la pobreza. Por lo que acabó siendo conquistado por los italianos, empezando así la era del shogunato de Mario. Mientras que, el avaro de Wario, fue detenido por el shogun Mario por evasión fiscal y se pasará el resto de sus días encerrado.";
-//Acto 3 (8): 
+//Acto 3 (8):                      
 String textoPreActo3Elefante =
 "Kido estaba dispuesto a luchar valerosamente contra el shogunato pero, en ese momento, Ryoma pensó en algo, ¿no es acaso inverosímil que un elefante de dos patas pueda mantenerse en pie?\n" +
 "Entonces, ¿se atreverá a realizar este cuestionamiento en voz alta?";
@@ -109,5 +110,6 @@ String acto3Incorrecto2 =
 
 //Acto 3 (7): 
 String acto3Incorrecto3 =
-"Sakamoto tenía un as bajo la manga, antes de recibir la bala un amigo italiano llamado Luigi le lanza una estrella y este se vuelve inmune todo tipo de ataques\n" +
+ "En ese momento, un mercenario con fusil en mano, e intentó disparar por la espalda al aguerrido samurái.\n\n" +
+"Pero Sakamoto tenía un as bajo la manga, antes de recibir la bala un amigo italiano llamado Luigi le lanza una estrella y este se vuelve inmune todo tipo de ataques\n" +
 "y gracias a su efecto y a la amistad que profesó con el extrangero pudieron derrotar al shogun bajo sus propias manos.";

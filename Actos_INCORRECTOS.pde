@@ -62,7 +62,7 @@ void iniciaracto3Incorrecto3() {
   tiempoAnterior = millis();
   mostrarActo2 = false;
   mostraracto3Incorrecto3 = true;
-}
+}                                                                                                                            
 void iniciarActo3Incorrecto() {
   textoActual = acto3Incorrecto; 
   letraActual = 0;
@@ -78,3 +78,4 @@ void iniciaracto3Incorrecto2() {
   mostrartextoPreActo3Elefante = false;
   mostraracto3Incorrecto2 = true;
 }
+                                                                                                                  
