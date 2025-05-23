@@ -17,13 +17,13 @@ String historiaActo0 =
   //Acto 2
   String historiaActo2 = 
   "Dos clanes rivales habían sido traicionados por el shogunato. El Choshu, de fuerte temple militar, fueron negados de víveres por parte del shogunato por sus conquistas en batalla. " +
-  "Y el Satsuma, quienes fueron negados de armas por parte del shogunato, por miedo a su poder.\n" +
+  "Y el Satsuma, quienes fueron negados de armas por parte del shogunato, por miedo a su poder.\n\n" +
   "Ryoma y Kaishu, sin perder tiempo alguno, reunieron a los poderosos Saigo Takamori, del clan Satsuma, y Kido Takayoshi, del clan Choshu, con tal de resolver sus diferencias.\n\n" +
-  "Saigo Takamori: ¿Aliarnos con el Choshu? ¡Son unos fanáticos que incendian legaciones extranjeras!\n" +
-  "Kido Takayoshi: ¡Y Satsuma se arrastra ante los bárbaros extranjeros!\n" +
-  "En ese momento, Ryoma golpea un saco de arroz, que se desparrama:\n" +
+  "Saigo Takamori: ¿Aliarnos con el Choshu? ¡Son unos fanáticos que incendian legaciones extranjeras!\n\n" +
+  "Kido Takayoshi: ¡Y Satsuma se arrastra ante los bárbaros extranjeros!\n\n" +
+  "En ese momento, Ryoma golpea un saco de arroz, que se desparrama:\n\n" +
   "Miren esto. Satsuma tiene excedentes de arroz, pero sus armas son obsoletas. Chōshū compró fusiles Armstrong modernos, pero su gente se muere de hambre. " +
-  "El shogunato los explota a ambos.\n" +
+  "El shogunato los explota a ambos.\n\n" +
   "Abre un baúl con";
   
   //Si se elige bien el acto 2
@@ -81,9 +81,9 @@ String acto2Incorrecto2 =
 String acto2WarioComida = 
 "Wario y Ryoma LLegan poco después que Bowser al castillo y encuentran a este sentado ante el trono del shogun. Ryoma se prepara para luchar contra el koopa.\n" +
 "Entonces Wario le dice : yo te he acompañado hasta aquí; ahora, ¿dónde está mi festín\n?"+
-"El samurai, al ver que no podría cumplir de inmediato su promesa, le dijo : si me ayudas a derrotar a ese monstruo, tendrás el mayor festín de lagarto que jamás se ha visto.\n" +
-"Emocionado por ese festín, Wario derrota al malvado Bowser de un puñetazo, permitiendo a Ryoma rescatar a Kaishu. Y, con la derrota del shogun, japón se pudo modernizar a gran velocidad./n" +
-"Y el agarrado de Wario montó un buen asado con la tortuga gigante que no compartió con nadie.";
+"El samurai, al ver que no podría cumplir de inmediato su promesa, le dijo : si me ayudas a derrotar a ese monstruo, tendrás el mayor festín de ajos que jamás se ha visto.\n" +
+"Emocionado por ese festín, Wario derrota al malvado Bowser de una embestida, permitiendo a Ryoma rescatar a Kaishu. Y, con la derrota del shogun, japón se pudo modernizar a gran velocidad./n" +
+"Y el agarrado de Wario montó un buen banquete de ajos que no compartió con nadie.";
 
 String acto2WarioDinero = 
 "Wario y Ryoma LLegan poco después que Bowser al castillo y encuentran a este sentado ante el trono del shogun. Ryoma se prepara para luchar contra el koopa.\n" +

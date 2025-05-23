@@ -22,7 +22,8 @@ boolean mostrarhistoriaActo1 = false;
 boolean mostrarHistoriaActo2Final = false;
 boolean mostrarActo3Incorrecto = false;
 
-boolean mostrarOpciones = false;
+
+
 
 color colorA = color(0, 0, 50);     
 color colorB = color(255, 100, 150); 
@@ -64,10 +65,17 @@ PImage SakamotoSprite;
 PImage SakamotoAttackSprite;
 PImage SakamotoTeaSprite;
 PImage KatsuSprite;
-PImage KatsuIdle;
-PImage KidoSprite;
-PImage SaigoSprite;
 PImage TemploSprite;
+
+PImage Bowser;
+PImage KatsuBowser;
+
+PImage ShogunSprite;
+PImage shogunQuemado;
+PImage WarioSprite;
+PImage ExclamacionSprite;
+PImage fondoScroll, fondoTemplo, fondoCalleWario;
+
 
 void keyPressed()
 {
@@ -140,7 +148,6 @@ void mousePressed() {
       }
       
       decisionTomada = false;
-      mostrarOpciones = false;
     }
   }
 }

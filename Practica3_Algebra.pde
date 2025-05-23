@@ -1,122 +1,3 @@
-void setup()
-{
-      minim = new Minim(this);
-  player = minim.loadFile("RyomaMusic.mp3");
-  player.loop();
-   colores();
-  
-  size(1800, 900, P3D);
-  startTime = millis();
-  background(0);
-  textSize(20);
-  fill(255);
-  frameRate(60);
-  
-  //Curva Interpolacion
-  PVector[] p = new PVector[4];
-  p[0] = new PVector(1200, 150);   // Posición inicial de Ryoma
-  p[1] = new PVector(1000, 200);   // Control intermedio
-  p[2] = new PVector(800, 180);    // Control intermedio
-  p[3] = new PVector(600, 150);    // Posición final
-  
-  trayectoria = new curva(p);
-  trayectoria.calcular_coefs();
-  
-  posicionRyoma = p[0].copy();
-  
-  //Curva de Bezier
- puntosBezier = new PVector[]
- {
-  new PVector(200, 150),
-  new PVector(400, 200),
-  new PVector(posicionRyoma.x, posicionRyoma.y),
-  new PVector(posicionRyoma.x +30, posicionRyoma.y)
-  };
-
-  //curvaKatsu = new curvaBezier(puntosBezier);
-  
-  iniciarActo0();
-  
-  //Cargar todas las imagenes
-  SakamotoSprite = loadImage("RyomaSakamoto.png");
-  KatsuSprite = loadImage("Katsu.png");
-  DecisionSprite = loadImage("Decision.png");
-  CasaSprite = loadImage("Casa.png");
-  TemploSprite = loadImage("templo.png");
-  SakamotoAttackSprite = loadImage("RyomaAttack.png");
-  SakamotoTeaSprite = loadImage("RyomaTe.png");
-  
-  KatsuIdle = loadImage("KatsuIdle.png");
-  KidoSprite = loadImage("Kido.png");
-  SaigoSprite = loadImage("Saigo.png");
-
-}
-
-
-
-void draw() {
-  background(0);
-  // Lógica de visualización de actos
-  if (mostrarActo0) 
-  {
-    image(CasaSprite, 0, 0, 1800, 590);
-    Acto1();
-    generacionOndas();
-    mostrarTextoProgresivo();
-  }
-   else if (mostrarActo1 || mostrarActo1Incorrecto)
-   {
-     if(mostrarActo1)
-     {
-       image(CasaSprite, 0, 0, 1800, 590);
-        //cinemática del acto 1
-        Acto2();
-        generacionOndas();
-        mostrarTextoProgresivo();
-     }
-     else
-     {
-       image(CasaSprite, 0, 0, 1800, 590);
-         generacionOndas();
-        mostrarTextoProgresivo();
-     }
-   } 
-  else if (mostrarActo2 || mostrarActo2Incorrecto)
-  {
-    if(mostrarActo2)
-     {
-        // Cinemática del acto 2
-        Acto3();
-        generacionOndas();
-        mostrarTextoProgresivo();
-     }
-     else
-     {
-       
-     }
-  } 
-  else if (mostrarActo3 || mostrarActo3Incorrecto)
-  {
-    // Cinemática del acto 3
-    generacionOndas();
-    mostrarTextoProgresivo();
-  }
-  
-  // Transiciones automáticas
-  if (mostrarActo1 && textoActual.length() == letraActual && !decisionTomada)
-  {
-    delay(1000);
-    iniciarHistoriaActo2();  
-  }
-  
-  if (mostrarActo1Incorrecto && textoActual.length() == letraActual && !decisionTomada)
-  {
-    delay(1000);
-    iniciaracto2Incorrecto2();
-  }
-  }
-
-
 //Codigo antiguo, lo comentamos por si al hacer el merge se perdio algo
 
 /*void setup()
@@ -206,3 +87,139 @@ void draw()
     mostrarTextoProgresivo();
   }
 }*/
+
+
+
+
+
+
+
+
+
+
+
+void setup()
+{
+      minim = new Minim(this);
+  player = minim.loadFile("RyomaMusic.mp3");
+  player.loop();
+   colores();
+  
+  size(1800, 900, P3D);
+  startTime = millis();
+  background(0);
+  textSize(20);
+  fill(255);
+  frameRate(60);
+  
+  //Curva Interpolacion
+  PVector[] p = new PVector[4];
+  p[0] = new PVector(1200, 150);   // Posición inicial de Ryoma
+  p[1] = new PVector(1000, 200);   // Control intermedio
+  p[2] = new PVector(800, 180);    // Control intermedio
+  p[3] = new PVector(600, 150);    // Posición final
+  
+  trayectoria = new curva(p);
+  trayectoria.calcular_coefs();
+  
+  posicionRyoma = p[0].copy();
+  
+  //Curva de Bezier
+ puntosBezier = new PVector[]
+ {
+  new PVector(200, 150),
+  new PVector(400, 200),
+  new PVector(posicionRyoma.x, posicionRyoma.y),
+  new PVector(posicionRyoma.x +30, posicionRyoma.y)
+  };
+
+  //curvaKatsu = new curvaBezier(puntosBezier);
+  
+  iniciarActo0();
+  
+  //Cargar todas las imagenes
+  SakamotoSprite = loadImage("RyomaSakamoto.png");
+  KatsuSprite = loadImage("Katsu.png");
+  DecisionSprite = loadImage("Decision.png");
+  CasaSprite = loadImage("Casa.png");
+  TemploSprite = loadImage("templo.png");
+  SakamotoAttackSprite = loadImage("RyomaAttack.png");
+  SakamotoTeaSprite = loadImage("RyomaTe.png");
+  Bowser = loadImage("Bowser.png");
+  KatsuBowser = loadImage("KatsuBowser.png");
+  
+
+  ShogunSprite = loadImage("RyomaSakamoto.png");
+  shogunQuemado = loadImage("RyomaSakamoto.png");
+  WarioSprite = loadImage("RyomaSakamoto.png");
+  ExclamacionSprite = loadImage("RyomaSakamoto.png");
+  fondoScroll = loadImage("Casa.png");
+  fondoTemplo = loadImage("Casa.png");
+  fondoCalleWario = loadImage("Casa.png");
+
+  
+}
+
+void draw() {
+  background(0);
+  // Lógica de visualización de actos
+  if (mostrarActo0) 
+  {
+    image(CasaSprite, 0, 0, 1800, 590);
+    //Acto1();
+    Wario();
+    generacionOndas();
+    mostrarTextoProgresivo();
+  }
+   else if (mostrarActo1 || mostrarActo1Incorrecto)
+   {
+     if(mostrarActo1)
+     {
+       image(CasaSprite, 0, 0, 1800, 590);
+        //cinemática del acto 1
+        Acto2();
+        generacionOndas();
+        mostrarTextoProgresivo();
+     }
+     else
+     {
+       image(CasaSprite, 0, 0, 1800, 590);
+         generacionOndas();
+        mostrarTextoProgresivo();
+     }
+   } 
+  else if (mostrarActo2 || mostrarActo2Incorrecto)
+  {
+    if(mostrarActo2)
+     {
+       image(TemploSprite, 0, 0, 1800, 590);
+        // Cinemática del acto 2
+        Acto3();
+        generacionOndas();
+        mostrarTextoProgresivo();
+     }
+     else
+     {
+       
+     }
+  } 
+  else if (mostrarActo3 || mostrarActo3Incorrecto)
+  {
+    // Cinemática del acto 3
+    generacionOndas();
+    mostrarTextoProgresivo();
+  }
+  
+/*  // Transiciones automáticas
+  if (mostrarActo1 && textoActual.length() == letraActual && !decisionTomada)
+  {
+    delay(1000);
+    iniciarHistoriaActo2();  
+  }
+  
+  if (mostrarActo1Incorrecto && textoActual.length() == letraActual && !decisionTomada)
+  {
+    delay(1000);
+    iniciaracto2Incorrecto2();
+  }*/
+}
