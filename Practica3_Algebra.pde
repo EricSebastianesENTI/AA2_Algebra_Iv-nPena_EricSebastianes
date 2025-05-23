@@ -148,6 +148,10 @@ void setup()
   Bowser = loadImage("Bowser.png");
   KatsuBowser = loadImage("KatsuBowser.png");
   
+    KatsuIdle = loadImage("KatsuIdle.png");
+  KidoSprite = loadImage("Kido.png");
+  SaigoSprite = loadImage("Saigo.png");
+  
 
   ShogunSprite = loadImage("RyomaSakamoto.png");
   shogunQuemado = loadImage("RyomaSakamoto.png");
