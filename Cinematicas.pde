@@ -264,8 +264,27 @@ void Wario() {
   if (!warioIniciado) {
     iniciarWario();
   }
-
-  image(fondoScroll, 0, 0,  1800, 590);
+  
+    // Dibujar la escena actual según el estado
+  switch(estadoWario) {
+    case 0:
+      // Escena 0: Movimiento en curva
+      image(fondoScroll, 0, 0, 1800, 590);
+      // Resto del código para esta escena...
+      break;
+      
+    case 1:
+      // Escena 1: Templo - Bowser quema al Shogun
+      image(fondoTemplo, 0, 0, 1800, 590);
+      // Resto del código para esta escena...
+      break;
+      
+    case 2:
+      // Escena 2: Ryoma encuentra a Wario
+      image(fondoCalleWario, 0, 0, 1800, 590);
+      // Resto del código para esta escena...
+      break;
+  }
 
 
   // ESCENA 0: Movimiento en curva de KatsuBowser con exclamación
@@ -354,7 +373,7 @@ void Wario() {
       // Conversación: ambos se mueven ligeramente como si hablaran
       float offset = sin(frameCount * 0.1) * 5;
       drawFlippedX(SakamotoSprite, posRyoma.x, posRyoma.y + offset, 220, 370);
-      image(WarioSprite, posWario.x-100, posWario.y - offset, 220, 370);  // No flippado
+      drawFlippedX(WarioSprite, posWario.x-100, posWario.y - offset, 370, 370);  // No flippado
     }
   }
 }

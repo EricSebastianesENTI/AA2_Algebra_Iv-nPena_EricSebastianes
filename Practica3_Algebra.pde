@@ -197,8 +197,15 @@ void draw() {
       mostrarTextoProgresivo();
     }
     else {
-      // No hacer nada especial aquí, ya que se maneja en las transiciones
+      
     }
+  }
+  else if (mostraracto2Incorrecto2) {
+    // Mostrar la animación de Wario cuando corresponde
+    image(fondoScroll, 0, 0, 1800, 590);
+    Wario();
+    generacionOndas();
+    mostrarTextoProgresivo();
   }
   else if (mostrarActo3 || mostrarActo3Incorrecto) {
     generacionOndas();

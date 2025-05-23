@@ -32,6 +32,7 @@ void iniciaracto2Incorrecto2() {
   tiempoAnterior = millis();
   mostrarActo1Incorrecto = false; // Asegúrate de limpiar este estado
   mostraracto2Incorrecto2 = true;
+    warioIniciado = false;
 }
 void iniciaracto2WarioComida() {
   textoActual = acto2WarioComida;
