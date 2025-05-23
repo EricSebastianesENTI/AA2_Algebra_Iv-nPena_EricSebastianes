@@ -85,12 +85,6 @@ PImage MarioShogunSprite;
 PImage Iemochi;
 PImage Consejero;
 
-float xConsejero = -250;       // Posición inicial fuera de pantalla
-float yConsejero = 30;
-float objetivoX = 200;         // Posición final al lado de Iemochi
-float easing = 0.05;           // Suavidad
-boolean animarConsejero = true;
-
 
 void keyPressed()
 {
