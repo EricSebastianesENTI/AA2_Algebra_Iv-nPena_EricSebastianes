@@ -493,7 +493,7 @@ void Wario() {
     }
 
     // Mostrar a Katsu al lado de Bowser, siempre flippado
-    drawFlippedX(KatsuBowser, posBowser.x - 200, posBowser.y, 220, 320);
+    drawFlippedX(KatsuIdle, posBowser.x - 200, posBowser.y, 220, 320);
 
     // Mostrar Shogun o su versión quemada
     if (!shogunCalcinado) {
