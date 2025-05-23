@@ -1,4 +1,5 @@
-PImage applyBurnLUT(PImage original) {
+PImage applyBurnLUT(PImage original) 
+{
   PImage result = createImage(original.width, original.height, ARGB);
   original.loadPixels();
   result.loadPixels();
@@ -39,4 +40,29 @@ PImage applyBurnLUT(PImage original) {
 
   result.updatePixels();
   return result;
+}
+
+//Botones LUT
+PImage aplicarLUTBotones(PImage img) {
+  PImage out = createImage(img.width, img.height, ARGB);
+  img.loadPixels();
+  out.loadPixels();
+
+  for (int i = 0; i < img.pixels.length; i++) {
+    color c = img.pixels[i];
+    
+    float r = red(c);
+    float g = green(c);
+    float b = blue(c);
+    float a = alpha(c);
+
+    float rOut = constrain(r * 1.1 + 20, 0, 255);
+    float gOut = constrain(g * 0.9, 0, 255);
+    float bOut = constrain(b * 1.3 + 30, 0, 255);
+
+    out.pixels[i] = color(rOut, gOut, bOut, a);
+  }
+
+  out.updatePixels();
+  return out;
 }

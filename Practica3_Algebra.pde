@@ -171,8 +171,8 @@ void draw() {
   if (mostrarActo0) 
   {
     image(CasaSprite, 0, 0, 1800, 590);
-    //Acto1();
-   WarioDinero();
+    Acto1();
+   //WarioDinero();
     generacionOndas();
     mostrarTextoProgresivo();
   }
@@ -189,6 +189,7 @@ void draw() {
      else
      {
        image(CasaSprite, 0, 0, 1800, 590);
+       BowserSecuestraKatsu();
          generacionOndas();
         mostrarTextoProgresivo();
      }
@@ -215,7 +216,7 @@ void draw() {
     mostrarTextoProgresivo();
   }
   
-/*  // Transiciones automáticas
+ // Transiciones automáticas
   if (mostrarActo1 && textoActual.length() == letraActual && !decisionTomada)
   {
     delay(1000);
@@ -226,5 +227,5 @@ void draw() {
   {
     delay(1000);
     iniciaracto2Incorrecto2();
-  }*/
+  }
 }

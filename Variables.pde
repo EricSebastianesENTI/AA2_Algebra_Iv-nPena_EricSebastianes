@@ -21,6 +21,7 @@ boolean mostraracto3Incorrecto3 = false;
 boolean mostrarhistoriaActo1 = false;
 boolean mostrarHistoriaActo2Final = false;
 boolean mostrarActo3Incorrecto = false;
+boolean mostrarOpciones = false;
 
 
 
@@ -104,42 +105,60 @@ void mousePressed() {
       decisionActoActual = overSprite1 ? 1 : 2;
 
       // Lógica completa de decisiones
-      if (mostrarActo0) {
-        if (decisionActoActual == 1) {
+      if (mostrarActo0) 
+      {
+        if (decisionActoActual == 1) 
+        {
           iniciarActo1Incorrecto();
-        } else {
-          //iniciarActo1();
-          WarioDinero();
+        } 
+        else 
+        {
+          iniciarActo1();
         }
       }
-      else if (mostrarActo1Incorrecto) {
+      else if (mostrarActo1Incorrecto) 
+      {
         iniciaracto2Incorrecto2();
       }
-      else if (mostraracto2Incorrecto2) {
-        if (decisionActoActual == 1) {
+      else if (mostraracto2Incorrecto2) 
+      {
+        if (decisionActoActual == 1) 
+        {
           iniciaracto2WarioDinero();
-        } else {
+        } 
+        else 
+        {
           iniciaracto2WarioComida();
         }
       }
-      else if (mostrarActo1) {
+      else if (mostrarActo1) 
+      {
         // Transición automática se maneja en draw()
       }
-      else if (mostrarActo2 && textoActual.equals(historiaActo2)) {
-        if (decisionActoActual == 1) {
+      else if (mostrarActo2 && textoActual.equals(historiaActo2)) 
+      {
+        if (decisionActoActual == 1) 
+        {
           iniciarActo2Incorrecto();
-        } else {
+        } 
+        else 
+        {
           iniciarHistoriaActo2Final();
         }
       }
-      else if (mostrarActo2Incorrecto) {
+      else if (mostrarActo2Incorrecto) 
+      {
         iniciartextoPreActo3Elefante();
       }
-      else if (mostrartextoPreActo3Elefante) {
-        if (decisionActoActual == 1) {
+      else if (mostrartextoPreActo3Elefante) 
+      {
+        if (decisionActoActual == 1) 
+        {
           iniciaracto3Incorrecto2();
-        } else {
-          iniciarActo3Incorrecto(); // Corregido: va a acto3Incorrecto
+        } 
+        else 
+        {
+          iniciarActo3Incorrecto();
         }
       }
       else if (mostrarHistoriaActo2Final) {
@@ -154,6 +173,8 @@ void mousePressed() {
       }
       
       decisionTomada = false;
+      mostrarOpciones = false;
+
     }
   }
 }

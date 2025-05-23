@@ -58,21 +58,29 @@ void mostrarTextoProgresivo() {
   String visible = textoActual.substring(0, letraActual);
   fill(255, 255, 255, 255);
   text(visible, 100, 600, 1600, 250);
-  
-  if(textoActual.length() == letraActual)
+
+  if(textoActual.length() == letraActual && !mostrarActo1)
   {
     boolean overSprite1 = mouseX > x1 && mouseX < x1 + w1 && mouseY > y1 && mouseY < y1 + h1;
     boolean overSprite2 = mouseX > x2 && mouseX < x2 + w2 && mouseY > y2 && mouseY < y2 + h2;
     
     if (overSprite1) {
+       aplicarLUTBotones(DecisionSprite);
       image(DecisionSprite, x1, y1, w1 + 10, h1 + 10);
+      aplicarLUTBotones(DecisionSprite);
       image(DecisionSprite, x2, y2, w2, h2);
+     aplicarLUTBotones(DecisionSprite);
     } else if (overSprite2) {
       image(DecisionSprite, x1, y1, w1, h1);
+      aplicarLUTBotones(DecisionSprite);
       image(DecisionSprite, x2, y2, w2 + 10, h2 + 10);
+      aplicarLUTBotones(DecisionSprite);
     } else {
       image(DecisionSprite, x1, y1, w1, h1);
+      aplicarLUTBotones(DecisionSprite);
       image(DecisionSprite, x2, y2, w2, h2);
+      aplicarLUTBotones(DecisionSprite);
+
     }
     
     fill(0);

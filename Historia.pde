@@ -17,13 +17,13 @@ String historiaActo0 =
   //Acto 2
   String historiaActo2 = 
   "Dos clanes rivales habían sido traicionados por el shogunato. El Choshu, de fuerte temple militar, fueron negados de víveres por parte del shogunato por sus conquistas en batalla. " +
-  "Y el Satsuma, quienes fueron negados de armas por parte del shogunato, por miedo a su poder.\n\n" +
-  "Ryoma y Kaishu, sin perder tiempo alguno, reunieron a los poderosos Saigo Takamori, del clan Satsuma, y Kido Takayoshi, del clan Choshu, con tal de resolver sus diferencias.\n\n" +
-  "Saigo Takamori: ¿Aliarnos con el Choshu? ¡Son unos fanáticos que incendian legaciones extranjeras!\n\n" +
-  "Kido Takayoshi: ¡Y Satsuma se arrastra ante los bárbaros extranjeros!\n\n" +
-  "En ese momento, Ryoma golpea un saco de arroz, que se desparrama:\n\n" +
+  "Y el Satsuma, quienes fueron negados de armas por parte del shogunato, por miedo a su poder.\n" +
+  "Ryoma y Kaishu, sin perder tiempo alguno, reunieron a los poderosos Saigo Takamori, del clan Satsuma, y Kido Takayoshi, del clan Choshu, con tal de resolver sus diferencias.\n" +
+  "Saigo Takamori: ¿Aliarnos con el Choshu? ¡Son unos fanáticos que incendian legaciones extranjeras!\n" +
+  "Kido Takayoshi: ¡Y Satsuma se arrastra ante los bárbaros extranjeros!\n" +
+  "En ese momento, Ryoma golpea un saco de arroz, que se desparrama:\n" +
   "Miren esto. Satsuma tiene excedentes de arroz, pero sus armas son obsoletas. Chōshū compró fusiles Armstrong modernos, pero su gente se muere de hambre. " +
-  "El shogunato los explota a ambos.\n\n" +
+  "El shogunato los explota a ambos.\n" +
   "Abre un baúl con";
   
   //Si se elige bien el acto 2
