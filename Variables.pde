@@ -113,7 +113,7 @@ void mousePressed() {
         }
       }
       else if (mostrarActo1Incorrecto) {
-        iniciarWario();
+        //iniciarWario();
         iniciaracto2Incorrecto2();
       }
       else if (mostraracto2Incorrecto2) {
