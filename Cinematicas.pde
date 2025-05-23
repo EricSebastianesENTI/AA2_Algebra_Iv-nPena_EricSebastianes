@@ -102,31 +102,61 @@ textSize(20);
     popMatrix();
 }
 
-void Acto4()
+
+void CinematicaActo3()
 {
-// Iemochi con un FlipX
-pushMatrix();
-translate(200 + 250, 150);
-scale(-1, 1);
-image(Iemochi, -250, 30, 230, 400);
-popMatrix();
+    if(mostrarHistoriaActo2Final == true)
+      {
+      image(KidoSprite,1100, 230, 200, 350);
+     image(SaigoSprite,1300, 230, 250, 350);
+      
+      pushMatrix();
+        translate(200 + 250, 150);
+        scale(-1, 1);
+        image(KatsuIdle, -500, 17, 250, 410);
+        popMatrix();
+        
+        pushMatrix();
+        translate(200 + 250, 150);
+        scale(-1, 1);
+        image(SakamotoSprite, -250, 30, 230, 400);
+        popMatrix();
+      }
 
-// Mover Consejero suavemente hacia su objetivo
-if (animarConsejero) {
-  float dx = objetivoX - xConsejero;
-  xConsejero += dx * easing;
-
-  // Si está muy cerca, detén la animación
-  if (abs(dx) < 1) {
-    xConsejero = objetivoX;
-    animarConsejero = false;
-  }
 }
 
-// Dibujar Consejero
-image(Consejero, xConsejero, yConsejero, 230, 400);
-  
-
+void Acto4()
+{
+  image(TemploSprite, 0, 0, 1800, 590); // Usa la imagen adecuada
+    
+  if(textoActual.length() == letraActual && mostrarHistoriaActo2Final == true)
+  {
+    iniciarActo3();  
+  }
+  else
+  {
+    // Iemochi con un FlipX
+    pushMatrix();
+    translate(200 + 250, 150);
+    scale(-1, 1);
+    image(Iemochi, -250, 30, 230, 400);
+    popMatrix();
+    
+    // Mover Consejero suavemente hacia su objetivo
+    if (animarConsejero) {
+      float dx = objetivoX - xConsejero;
+      xConsejero += dx * easing;
+    
+      // Si está muy cerca, detén la animación
+      if (abs(dx) < 1) {
+        xConsejero = objetivoX;
+        animarConsejero = false;
+      }
+    }
+    
+    // Dibujar Consejero
+    image(Consejero, xConsejero, yConsejero, 230, 400);
+  }
 }
 
 

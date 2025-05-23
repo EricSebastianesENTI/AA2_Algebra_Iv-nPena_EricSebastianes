@@ -85,9 +85,9 @@ PImage MarioShogunSprite;
 PImage Iemochi;
 PImage Consejero;
 
-float xConsejero = -250;       // Posición inicial fuera de pantalla
-float yConsejero = 30;
-float objetivoX = 200;         // Posición final al lado de Iemochi
+float xConsejero = 950;       // Posición inicial fuera de pantalla
+float yConsejero = 180;
+float objetivoX = 800;         // Posición final al lado de Iemochi
 float easing = 0.05;           // Suavidad
 boolean animarConsejero = true;
 
@@ -102,6 +102,7 @@ void keyPressed()
      velocidad = 25; 
    }
 }
+
 
 void mousePressed() {
   if (textoActual.length() == letraActual && !decisionTomada) {
@@ -118,8 +119,84 @@ void mousePressed() {
         } else {
           iniciarActo1();
         }
+        decisionTomada = false;
+        mostrarOpciones = false;
       }
+
+      else if (mostrarActo1) {
+        iniciarHistoriaActo2();
+        decisionTomada = false;
+        mostrarOpciones = false;
+      }
+
+      else if (mostrarActo2) {
+        if (decisionActoActual == 2) {
+          iniciarHistoriaActo2Final(); // Te llevará al acto 4
+          decisionTomada = false;
+          mostrarOpciones = false;
+        }
+        // Si eliges 1, NO pasa nada: se conserva el estado y siguen las opciones visibles
+      }
+
       else if (mostrarActo1Incorrecto) {
+        iniciaracto2Incorrecto2();
+        decisionTomada = false;
+        mostrarOpciones = false;
+      }
+
+      else if (mostraracto2Incorrecto2) {
+        if (decisionActoActual == 1) {
+          iniciaracto2WarioDinero();
+        } else {
+          iniciarWarioFinal();
+        }
+        decisionTomada = false;
+        mostrarOpciones = false;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+/*void mousePressed() {
+  if (textoActual.length() == letraActual && !decisionTomada) {
+    boolean overSprite1 = mouseX > x1 && mouseX < x1 + w1 && mouseY > y1 && mouseY < y1 + h1;
+    boolean overSprite2 = mouseX > x2 && mouseX < x2 + w2 && mouseY > y2 && mouseY < y2 + h2;
+    
+    if (overSprite1 || overSprite2) {
+      decisionTomada = true;
+      decisionActoActual = overSprite1 ? 1 : 2;
+
+      if (mostrarActo0) 
+      {
+        if (decisionActoActual == 1) 
+        {
+          iniciarActo1Incorrecto();
+        } 
+        else 
+        {
+          iniciarActo1();
+        }
+      }
+      else if(mostrarActo1)
+      {
+        iniciarHistoriaActo2();
+      }
+      else if(mostrarActo2)
+      {
+        if (decisionActoActual == 2) 
+        {
+         iniciarHistoriaActo2Final();
+        } 
+      }
+      
+      else if (mostrarActo1Incorrecto)
+      {
         iniciaracto2Incorrecto2();
       }
       else if (mostraracto2Incorrecto2) {
@@ -134,7 +211,7 @@ void mousePressed() {
       mostrarOpciones = false;
     }
   }
-}
+}*/
 
 
 

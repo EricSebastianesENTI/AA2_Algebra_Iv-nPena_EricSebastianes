@@ -59,7 +59,7 @@ void mostrarTextoProgresivo() {
   fill(255, 255, 255, 255);
   text(visible, 100, 600, 1600, 250);
 
-  if(textoActual.length() == letraActual && !mostrarActo1 ||textoActual.length() == letraActual && !mostrarActo1Incorrecto)
+  if(textoActual.length() == letraActual && !mostrarActo1)
   {
     boolean overSprite1 = mouseX > x1 && mouseX < x1 + w1 && mouseY > y1 && mouseY < y1 + h1;
     boolean overSprite2 = mouseX > x2 && mouseX < x2 + w2 && mouseY > y2 && mouseY < y2 + h2;
@@ -99,8 +99,10 @@ void mostrarTextoProgresivo() {
       text("Mostrar documentos", x2 + w2/2 - 90, y2 + h2/2);
     }
     else if (mostrarActo2 && textoActual.equals(historiaActo2Final)) {
-      text("Con reservas", x1 + w1/2 - 50, y1 + h1/2);
-      text("Sin reservas", x2 + w2/2 - 50, y2 + h2/2);
+      /*text("Con reservas", x1 + w1/2 - 50, y1 + h1/2);
+      text("Sin reservas", x2 + w2/2 - 50, y2 + h2/2);*/
+      text("Mostrar armas", x1 + w1/2 - 70, y1 + h1/2);
+      text("Mostrar documentos", x2 + w2/2 - 90, y2 + h2/2);
     }
     else if (mostraracto2Incorrecto2) {
       text("Dinero", x1 + w1/2 - 30, y1 + h1/2);
