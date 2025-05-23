@@ -85,7 +85,10 @@ PImage MarioShogunSprite;
 PImage Iemochi;
 PImage Consejero;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 
 void keyPressed()
 {
