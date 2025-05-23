@@ -49,7 +49,7 @@ void iniciaracto2WarioDinero() {
   mostraracto2WarioDinero = true;
 }
 void iniciartextoPreActo3Elefante() {
-  textoActual = textoPreActo3Elefante;
+  textoActual = acto2Incorrecto;
   letraActual = 0;
   tiempoAnterior = millis();
   mostrarActo2 = false;

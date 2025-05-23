@@ -151,6 +151,10 @@ void mousePressed() {
           mostrarOpciones = false;
         }
       }
+      
+ /*               iniciartextoPreActo3Elefante();
+           decisionTomada = false;
+          mostrarOpciones = false;*/
 
       else if (mostrarActo1Incorrecto) {
         iniciaracto2Incorrecto2();

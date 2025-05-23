@@ -65,9 +65,20 @@ String acto1Incorrecto =
 //Extrañas armas occidentales. 
 String acto2Incorrecto = "Ryoma les dice que han encontrado estas extrañas occidentales de un navio errante,\n"
 + "Ryoma cogió una de esas extrañas armas y resultó ser un caparazón azul y este sale volando, rompoiendo la pared, parecía peligroso,\n" +
-"Kido Takayoshi coge la Elefanzana y este se transforma en un elefante, todos se asustan, Saigo Takamori le ataca con una katana,\n" +
-"Pero ante el poder del elefante rompe la katana y Kido Takayoshi al girarse le golpea con la trompa y lo estampa contra a una pared y es derrotado,\n" +
-"los dos clanes idolatran a Kido Elefante creyendo que es una especie de Rey Yo-Kai que ha venido a unificarlos.";
+"Kido Takayoshi coge la Elefanzana y este se transforma en un elefante\n" +
+"Ante el poder del elefante rompe la katana y Kido Takayoshi derrotado a Iemochi,\n" +
+"los dos clanes idolatran a Kido Elefante creyendo que es una especie de Rey Yo-Kai que ha venido a unificarlos." + 
+"Kido Elefante derrota muy facilmente al shogun y al hacerlo tan rapido y haberse convertido en el ganador se le sube el poder a la cabeza\n" +
+"A la gente le empieza a decir que son sus súbditos y que los gobernara con su puño de hierro y justo aparece el caparazón azul golpeándolo por ir ganando\n" +
+"y lo destransforma volviendo a ser humano, la gente descubre que era un impostor y lo ejecutan pero para su suerte tenía vidas extra,\n" +
+"Sakamoto se convirtió en el nuevo líder de Japón y comenzó a establecer relaciones comerciales con los extranjeros.";
+
+String acto3Incorrecto =
+"Kido Elefante derrota muy facilmente al shogun y al hacerlo tan rapido y haberse convertido en el ganador se le sube el poder a la cabeza\n" +
+"A la gente le empieza a decir que son sus súbditos y que los gobernara con su puño de hierro y justo aparece el caparazón azul golpeándolo por ir ganando\n" +
+"y lo destransforma volviendo a ser humano, la gente descubre que era un impostor y lo ejecutan pero para su suerte tenía vidas extra,\n" +
+"Sakamoto se convirtió en el nuevo líder de Japón y comenzó a establecer relaciones comerciales con los extranjeros.";
+
 //String acto2Incorrecto2 = "";
 
 String acto2Incorrecto2 =
@@ -94,11 +105,6 @@ String acto2WarioDinero =
 String textoPreActo3Elefante =
 "Kido estaba dispuesto a luchar valerosamente contra el shogunato pero, en ese momento, Ryoma pensó en algo, ¿no es acaso inverosímil que un elefante de dos patas pueda mantenerse en pie?\n" +
 "Entonces, ¿se atreverá a realizar este cuestionamiento en voz alta?";
-String acto3Incorrecto =
-"Kido Elefante derrota muy facilmente al shogun y al hacerlo tan rapido y haberse convertido en el ganador se le sube el poder a la cabeza\n" +
-"A la gente le empieza a decir que son sus súbditos y que los gobernara con su puño de hierro y justo aparece el caparazón azul golpeándolo por ir ganando\n" +
-"y lo destransforma volviendo a ser humano, la gente descubre que era un impostor y lo ejecutan pero para su suerte tenía vidas extra,\n" +
-"Sakamoto se convirtió en el nuevo líder de Japón y comenzó a establecer relaciones comerciales con los extranjeros.";
 
 //Acto 3 (9):
 String acto3Incorrecto2 =
